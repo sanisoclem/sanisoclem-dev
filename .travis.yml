@@ -7,7 +7,6 @@ env:
 
 language: rust
 rust:
-  - precache
   - stable
   - nightly
 
@@ -23,19 +22,22 @@ addons:
       - node
 
 stages:
-  - test
+  - name: precache
+    if: type != push OR branch = master OR tag IS present
+  - name: test
+    if: type != push OR branch = master OR tag IS present
   - name: deploy-pr
-    # if: pr
+    if: type = pull_request AND fork = false and commit_message !~ /(no-deploy|wip)/
   - name: deploy
-    if: branch = master AND type IN (push)
+    if: branch = master AND type IN (push) AND fork = false
+  - name: prune
+    if: type = cron
 
 cache: 
   - cargo
   - yarn
 
 before_install:
-  # wasm-pack
-  - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh
   # yarn
   - sudo apt-key adv --fetch-keys http://dl.yarnpkg.com/debian/pubkey.gpg
   - echo "deb http://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -44,30 +46,39 @@ before_install:
 
 
 install:
-  - cd $TRAVIS_BUILD_DIR/www && yarn
+  - pushd $TRAVIS_BUILD_DIR/www && yarn
+  - popd
 
 script: cargo test # temporary until I figure out headless testing in travis
 
+
+DEPLOY_TO_S3: &DEPLOY_TO_S3
+  before_install:
+    - pip install --user awscli
+  before_script:
+    - wasm-pack build --release
+    - cd $TRAVIS_BUILD_DIR/pkg && yarn link
+    - pushd $TRAVIS_BUILD_DIR/www && yarn link sanisoclem-dev && yarn run webpack --mode production --output-path $TRAVIS_BUILD_DIR/dist
+    - popd
+
 jobs:
   include:
+    - stage: prune
+      #before_install:
+        #- pip install --user awscli
+      script: echo todo, delete files from s3 with no active prs
+      rust: stable
     - stage: precache
+      before_install:
+        # wasm-pack (cached in cargo folder)
+        - "[[ -f $HOME/.cargo/bin/wasm-pack ]] || curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh"
       script: true
       rust: stable
     - stage: deploy
       rust: stable
-      before_install:
-        - pip install --user awscli
-      script: 
-        - wasm-pack --release
-        - cd $TRAVIS_BUILD_DIR/pkg && yarn link
-        - cd $TRAVIS_BUILD_DIR/www && yarn link sanisoclem-dev
-        - aws s3 sync $TRAVIS_BUILD_DIR/dist s3://jerahmeelcosinas.net/
+      script: aws s3 sync $TRAVIS_BUILD_DIR/dist s3://jerahmeelcosinas.net/
+      <<: *DEPLOY_TO_S3
     - stage: deploy-pr
       rust: stable
-      before_install:
-        - pip install --user awscli
-      script: 
-        - wasm-pack --release
-        - cd $TRAVIS_BUILD_DIR/pkg && yarn link
-        - cd $TRAVIS_BUILD_DIR/www && yarn link sanisoclem-dev && yarn run webpack --mode production --output-path $TRAVIS_BUILD_DIR/dist
-        - aws s3 sync $TRAVIS_BUILD_DIR/dist "s3://review.jerahmeelcosinas.net/pr-$TRAVIS_PULL_REQUEST"
+      script: aws s3 sync $TRAVIS_BUILD_DIR/dist "s3://review.jerahmeelcosinas.net/pr-$TRAVIS_PULL_REQUEST"
+      <<: *DEPLOY_TO_S3
