@@ -1,0 +1,110 @@
+@require "utils";
+@require "colors";
+@require "typography";
+@require "animations";
+@require "nav";
+@require "icons";
+
+// TODO: clean up styles
+// - use color pallete
+// - use uniform gutter and font sizes
+
+
+body
+html
+  width: 100%;
+  height: 100%;
+
+body
+  color: get-color('neutral','contrast');
+  background-color: get-color('neutral');
+
+
+h1, h2, h3, h4, h5, h6
+   margin: 0 0 1rem;
+
+p
+  margin: 0 0 1rem;
+
+a
+  color: get-color('accent');
+  transition: color 0.2s ease-in-out;
+
+  &:hover, &:focus
+    text-decoration: none;
+    color: get-color('accent', 10);
+
+.btn-circle
+  width: 70px;
+  height: 70px;
+  margin-top: 1rem;
+  border: 2px solid #ffffff;
+  border-radius: 35px;
+  font-size: 40px;
+  color: #ffffff;
+  background: transparent;
+  transition: background 0.3s ease-in-out;
+
+  &:hover
+  &:focus
+    outline: none;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+
+.page-scroll
+  .btn-circle
+    i.animated
+      transition-property: transform;
+      transition-duration: 1s;
+    &:hover i.animated
+      animation-name: pulse;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+
+.content-section
+  min-height:100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  text-align: center;
+
+  .container
+    margin: calc(5rem + 50px) auto
+
+  p
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+
+    +breakpoint('sm')
+      font-size: 2rem;
+      margin-top: 2rem;
+
+
+.intro
+  background: url(../img/bg.jpg) no-repeat center center scroll;
+  background: url(../img/bg.webp) no-repeat center center scroll;
+  background-size: cover;
+  background-attachment: fixed;
+
+  .brand-heading
+    width: 100%;
+    font-size: 5rem;
+  .tagline
+    font-size: 18px;
+
+
+#about
+  padding:0;
+
+
+#projects
+  background-color: get-color('accent','light')
+  color: get-color('accent','contrast')
+
+
+#contact
+  background-color: get-color('neutral','dark')
+  color: get-color('neutral','contrast')
