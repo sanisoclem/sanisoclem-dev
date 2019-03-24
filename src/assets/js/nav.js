@@ -3,7 +3,6 @@ import inlineSVG from 'inline-svg';
 // -- other stuff, using ambient imported jquery (needed by bootstrap)
 // -- todo: remove bootstrap
 export function setup_nav()  {
-
   // TODO: publish message to rust, represent collapse in rust state
   $(window).scroll(() => {
     if ($(".navbar").offset().top > 50) {
