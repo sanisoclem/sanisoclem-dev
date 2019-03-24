@@ -20,7 +20,7 @@ module.exports = {
         use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader']
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg|jxr|webp)$/i,
         use: ['file-loader']
       },
       {

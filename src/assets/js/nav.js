@@ -14,11 +14,17 @@ export function setup_nav()  {
 
   // TODO: remove, will be handled in rust
   $(()=> {
+    const nav = $('.navbar-collapse');
+    const toggle = $('navbar-toggle');
     $('.page-scroll a').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
         }, 1000, 'easeInOutExpo');
+
+        // -- hack because .data-toggle is lame
+        nav.removeClass('in').addClass('collapse').css('height','1px');
+        toggle.addClass('collapsed');
         event.preventDefault();
     });
   });

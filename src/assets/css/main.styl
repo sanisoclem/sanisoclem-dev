@@ -74,11 +74,17 @@ a
   text-align: center;
 
   p
-    font-size: 2rem;
-    margin-top: 2rem;
+    font-size: 1rem;
+    margin-top: 1rem;
+
+    +breakpoint('sm')
+      font-size: 2rem;
+      margin-top: 2rem;
+
 
 .intro
-  background: url(../img/bg.png) no-repeat center center scroll;
+  background: url(../img/bg.jpg) no-repeat center center scroll;
+  background: url(../img/bg.webp) no-repeat center center scroll;
   background-size: cover;
   background-attachment: fixed;
 

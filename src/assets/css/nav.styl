@@ -16,10 +16,16 @@
       transition: background 0.3s ease-in-out;
 
   .navbar-brand
-    width: 300px;
-    height: 50px;
-    line-height: 50px;
+    width: 270px;
+    height: 60px;
+    overflow: hidden;
+    line-height: 60px;
     padding: 0;
+
+    +breakpoint('sm')
+      height: 50px;
+      line-height: 50px;
+      width:300px;
 
     &:focus
       outline: none;
