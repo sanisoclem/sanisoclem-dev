@@ -1,0 +1,47 @@
+
+
+jc-colors = {
+  "primary": {
+    "base": #263238,
+    "light": #4f5b62,
+    "dark": #000a12,
+    "contrast": white
+  },
+  "accent": {
+    "base": rgb(240,147,43),
+    "light": mix(white,rgb(240,147,43),20%),
+    "dark": #7f0000,
+    "contrast": white
+  },
+  "neutral": {
+    "base": rgb(83,91,104),
+    "light": #ccc,
+    "dark": #111,
+    "contrast": white
+  },
+  "green": {
+    "base": #66bb6a,
+    "light": #98ee99,
+    "dark": #338a3e,
+    "contrast": black
+  },
+  "warn": {
+    "base": #fb8c00,
+    "light": #ffbd45,
+    "dark": #c25e00,
+    "contrast": black
+  }
+}
+
+color-interval = 1%
+get-color(name = "primary", variant = "base", alpha = 1)
+  retval = null
+  color-spectrum = jc-colors[name]
+  retval = variant in color-spectrum ? color-spectrum[variant] : get-color(name)
+
+  if typeof(variant) == "unit"
+    color-base = variant < 0 ? black : white
+    retval = mix(color-base, retval, abs(variant) * color-interval)
+  if alpha
+    retval = rgba(retval, alpha)
+  retval

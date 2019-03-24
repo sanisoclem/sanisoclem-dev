@@ -1,0 +1,42 @@
+//Below is a list of the Sass rules that could not be converted to Stylus
+// @warn: line 27 in your Sass file
+
+
+$breakpoints = {
+  xs: 512px, 
+  sm: 768px, 
+  md: 896px, 
+  lg: 1152px, 
+  xl: 1280px
+}
+
+breakpoint($breakpoint)
+  if $breakpoint in $breakpoints
+    @media (min-width: $breakpoints[$breakpoint])
+      {block}
+  else if type_of($breakpoint) == number and unit($breakpoint) == px or unit($breakpoint) == em or unit($breakpoint) == rem
+    @media (min-width: $breakpoint)
+      {block}
+  else
+    {block}
+
+clearfix()
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+links($link, $hover = $link, $active = $link, $visited = $link)
+  &,
+  &:hover,
+  &:visited,
+  &:active, 
+  &:focus
+    color: $link
+    {block}
+    &:visited
+      color: $visited
+    &:hover
+      color: $hover
+    &:active, &:focus
+      color: $active
