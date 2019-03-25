@@ -108,3 +108,27 @@ a
 #contact
   background-color: get-color('neutral','dark')
   color: get-color('neutral','contrast')
+
+  .contacts
+    list-style: none;
+    padding: 0;
+    margin-top: 5rem;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+
+    svg.contact-icon
+      width: 20vmin;
+      height: 20vmin;
+
+      path
+        fill: get-color('neutral','contrast');
+        transition: 0.5s;
+
+    a:hover svg.contact-icon path
+      fill: get-color('accent')
+
+
+    .link-label
+      display: none;
