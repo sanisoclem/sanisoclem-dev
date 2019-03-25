@@ -1,0 +1,96 @@
+.nav-main {
+  background-color: $primary-color-dark;
+  font-size: 18px;
+  text-transform: uppercase;
+  box-shadow: none;
+  border-bottom: 1px solid rgba($foreground-color,0.3);
+  transition: background-color 0.5s ease-in-out;
+
+  @media #{$medium-and-down} {
+    .container {
+      width: 100%;
+    }
+
+    .nav-wrapper {
+      display:flex;
+      flex-direction: row;
+      flex-wrap: none;
+      padding-left:1rem;
+
+      > * {
+        position: unset;
+        display: block;
+        left: unset;
+        transform: none;
+      }
+      .sidenav-trigger {
+        order: 2;
+        flex-grow: 0;
+      }
+
+      .brand-logo{
+        order:1;
+        flex-grow: 1;
+      }
+    }
+  }
+
+  #nav-menu,
+  #mobile-menu {
+    a.active {
+      color: $link-color;
+      background-color: rgba($foreground-color,0.2);
+      transition: background-color 0.5s ease-in-out;
+    }
+  }
+
+  svg.logo {
+    margin-right: .5rem;
+    height:40px;
+    width: 40px;
+    vertical-align: middle;
+    fill: none;
+
+    path {
+      stroke: currentColor;
+      transition: 0.2s;
+    }
+  }
+
+  .brand-logo {
+    font-size: 1em;
+
+    &:hover {
+      color: $link-color;
+
+      svg.logo path{
+        d: path("m4,1h4v8h-5v-3M15,3v-2h-4v8h4v-2");
+        stroke-dasharray: 10 1;
+        stroke-dashoffset: -20;
+        //stroke: $link-color;
+        animation: dash 1s linear infinite;
+      }
+    }
+  }
+}
+
+#mobile-menu {
+  background: $primary-color;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > li > a {
+    color: $foreground-color;
+
+    &:hover {
+      color: $link-color;
+    }
+
+    &.active > span {
+
+      padding-bottom: 0.2em;
+      border-bottom: 2px solid $link-color;
+    }
+  }
+}

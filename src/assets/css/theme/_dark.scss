@@ -1,0 +1,17 @@
+$foreground-color: #fff;
+$navbar-height-mobile: 64px;
+$primary-color: #111 !default;
+$primary-color-light: #535b68 !default;
+$primary-color-dark: #000 !default;
+$secondary-color: #407A52 !default;
+// $success-color: color("green", "base") !default;
+// $error-color: color("red", "base") !default;
+$link-color: rgb(240,147,43) !default;
+
+
+
+
+
+ body {
+   color: $foreground-color;
+ }

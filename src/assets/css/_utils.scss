@@ -1,0 +1,68 @@
+$color-interval: 10%;
+
+$jc-colors: (
+  'primary': (
+    "base": #ccc,
+    "light": #fff,
+    "dark": #888,
+    "contrast": #fff,
+    "accent": rgb(240,147,43)
+  ),
+  "secondary": (
+    "base": #98ee99,
+    "contrast": #111
+  )
+ ) !default;
+
+$breakpoints: (
+  xs: 512px,
+  sm: 768px,
+  md: 896px,
+  lg: 1152px,
+  xl: 1280px
+) !default;
+
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{ map-get($breakpoints, $breakpoint) } ) {
+      @content;
+    }
+  } @else if type_of($breakpoint) == number and unit($breakpoint) == px or unit($breakpoint) == em or unit($breakpoint) == rem {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @warn "Invalid breakpoint `#{$breakpoint}`. Media query not used.";
+    @content;
+  }
+}
+
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@function get-color($name: 'primary', $variant: 'base', $alpha: 1) {
+
+  $color: null;
+
+  $color-spectrum: map-get($jc-colors, $name);
+
+  $color: if(map-has-key($color-spectrum, $variant), map-get($color-spectrum, $variant), get-color($name));
+
+  @if type-of($variant) == 'number' {
+    $color-base: if($variant < 0, black, white);
+    $color: mix($color-base, $color, abs($variant) * $color-interval);
+  }
+
+  @if ($alpha) {
+    $color: rgba($color, $alpha);
+  }
+
+  @return $color;
+}
