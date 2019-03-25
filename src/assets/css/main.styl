@@ -15,11 +15,6 @@ html
   width: 100%;
   height: 100%;
 
-body
-  color: get-color('neutral','contrast');
-  background-color: get-color('neutral');
-
-
 h1, h2, h3, h4, h5, h6
    margin: 0 0 1rem;
 
@@ -63,13 +58,24 @@ a
       animation-timing-function: linear;
 
 
+// set container to 100% in mobile (why is this not the default)
+.container
+  width: 100%;
+  +breakpoint('sm')
+    width: $breakpoints['sm']
+  +breakpoint('md')
+    width: $breakpoints['md']
+  +breakpoint('lg')
+    width: $breakpoints['lg']
+  +breakpoint('xl')
+    width: $breakpoints['xl']
+
 .content-section
   min-height:100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
   flex-wrap: nowrap;
-  text-align: center;
 
   .container
     margin: calc(5rem + 50px) auto
@@ -84,13 +90,15 @@ a
 
 
 .intro
-  background: url(../img/bg.jpg) no-repeat center center scroll;
-  background: url(../img/bg.webp) no-repeat center center scroll;
+  text-align: center;
+  background: #000 url(../img/bg.jpg) no-repeat center center scroll;
+  background: #000 url(../img/bg.webp) no-repeat center center scroll;
   background-size: cover;
   background-attachment: fixed;
+  color: get-color('neutral','contrast');
 
   .brand
-    background: get-color('neutral','light',0.1)
+    background: get-color('neutral','contrast',0.1)
     max-width: 600px;
     margin: 0 auto;
     padding: 1rem;
@@ -108,17 +116,44 @@ a
 
 #about
   padding:0;
-
-
+  color: get-color('neutral','contrast');
+  background-color: get-color('neutral','light');
 
 #projects
-  background-color: get-color('accent','light')
-  color: get-color('accent','contrast')
+  background-color: get-color('secondary')
+  color: get-color('secondary','contrast')
 
+  h2
+    text-align: center;
+    margin-bottom:5rem;
+
+  .project
+    margin-bottom: 5rem;
+    padding: 1rem;
+
+    p
+      font-size: 1.5rem;
+    .project-icon
+      margin-bottom: 5rem;
+
+      +breakpoint('sm')
+        margin-bottom:0;
+      a, img, svg
+        display:block;
+        margin:0;
+        width:100%;
+
+      path
+        fill: #1f3a93; //get-color('secondary','contrast')
+
+      text
+        fill: get-color('secondary','contrast');
+        stroke: get-color('secondary','contrast');
 
 #contact
   background-color: get-color('neutral','dark')
   color: get-color('neutral','contrast')
+  text-align: center;
 
   .contacts
     list-style: none;
@@ -126,16 +161,25 @@ a
     margin-top: 5rem;
     display:flex;
     flex-direction: row;
-    justify-content: space-evenly;
+
     flex-wrap: nowrap;
+    justify-content: space-evenly
 
     svg.contact-icon
-      width: 20vmin;
-      height: 20vmin;
+      width: 15vmin;
+      height: 15vmin;
 
       path
         fill: get-color('neutral','contrast');
         transition: 0.5s;
+
+    +breakpoint('md')
+      justify-content: center
+
+      svg.contact-icon
+        width: 5vmin;
+        height: 5vmin;
+        margin: 1rem
 
     a:hover svg.contact-icon path
       fill: get-color('accent')

@@ -17,7 +17,7 @@ export function setup_nav()  {
     const nav = $('.navbar-collapse');
     const toggle = $('navbar-toggle');
     $('.page-scroll a').bind('click', function(event) {
-        var $anchor = $(this);
+        const $anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $($anchor.attr('href')).offset().top
         }, 1000, 'easeInOutExpo');
@@ -29,10 +29,17 @@ export function setup_nav()  {
     });
   });
 
+  $('[data-spy="scroll"]').on('activate.bs.scrollspy', function (e) {
+    const navbar = $('.navbar-custom');
+    const target = $($(e.target).find('a').attr('href'));
+    const desiredColor = target.css('background-color');
+    navbar.css('background-color',desiredColor);
+  })
+
   // -- svg styles not working!!
-  inlineSVG.init({
-    svgSelector: 'img.svg-inline', // the class attached to all images that should be inlined
-    initClass: 'js-inlinesvg', // class added to <html>
-  }, function () {
-  });
+  // inlineSVG.init({
+  //   svgSelector: 'img.svg-inline', // the class attached to all images that should be inlined
+  //   initClass: 'js-inlinesvg', // class added to <html>
+  // }, function () {
+  // });
 }
