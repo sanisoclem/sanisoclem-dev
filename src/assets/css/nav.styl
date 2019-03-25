@@ -1,8 +1,9 @@
 .navbar
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid transparent;
   text-transform: uppercase;
   background-color: #000000;
+  transition: background-color 0.5s ease-in-out;
 
   a
     color: get-color('neutral','contrast');
@@ -58,6 +59,9 @@
     &:active
       outline: none;
 
+  .navbar-collapse
+    box-shadow: 0px 5px 20px -10px get-color('neutral','dark');
+
   +breakpoint('sm')
     padding: 1rem 0;
     border-bottom: none;
@@ -66,6 +70,9 @@
     transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
 
     &.top-nav-collapse
-      padding: 0;
-      background-color: #000000;
+      //padding: 0;
+      //background-color: #000000;
       border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    .navbar-collapse
+      box-shadow: none

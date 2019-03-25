@@ -10,7 +10,8 @@
 
   <title>Jerahmeel Cosinas</title>
 
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Exo|Montserrat|Roboto" rel="stylesheet">
 </head>
@@ -24,7 +25,7 @@
             <path fill-rule="evenodd" d="M11.41 9H.59C0 9 0 8.59 0 8c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zm0-4H.59C0 5 0 4.59 0 4c0-.59 0-1 .59-1H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1h.01zM.59 11H11.4c.59 0 .59.41.59 1 0 .59 0 1-.59 1H.59C0 13 0 12.59 0 12c0-.59 0-1 .59-1z"></path>
           </svg>
         </button>
-        <a class="navbar-brand" href="#page-top">
+        <a class="navbar-brand" href="#intro">
           <svg viewBox="0 0 10 10" class="logo">
             <g>
               <path d="m1,1h4v8h-4v-2M9,3v-2h-4v8h4v-2" />
@@ -37,7 +38,7 @@
       <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
         <ul class="nav navbar-nav">
           <li class="hidden">
-            <a href="#page-top"></a>
+            <a href="#intro"></a>
           </li>
           <li class="page-scroll">
             <a href="#about">About</a>
@@ -53,11 +54,14 @@
     </div>
   </nav>
 
-  <section class="intro content-section">
+  <section id="intro" class="intro content-section">
     <div class="container">
-      <h1 class="brand-heading"><span>Jerahmeel Cosinas</span></h1>
+      <div class="brand">
+        <h1 class="brand-heading"><span>Jerahmeel Cosinas</span></h1>
+      </div>
       <p class="tagline">Programmer · Curious</p>
       <p class="description"></p>
+
       <div class="page-scroll">
         <a href="#about" class="btn btn-circle">
           <i class="fa fa-angle-double-down animated"></i>
@@ -68,32 +72,101 @@
 
   <section id="about" class="content-section">
     <div class="container">
-      <h2>Jerahmeel</h2>
-      <p>Donec eu ornare tellus. Fusce fringilla tortor velit, sit amet faucibus nisl convallis et. In tellus neque, blandit ut rhoncus ultricies, porta ac sem. Duis fringilla ac augue eu hendrerit. Quisque sem lorem, consectetur sed rutrum vel, scelerisque eu arcu. Donec eleifend massa eget tempus consectetur.</p>
-      <p>Proin ut risus at lacus iaculis facilisis. Maecenas justo purus, commodo eu metus ut, semper accumsan est. Suspendisse maximus facilisis lorem vitae scelerisque. Nunc suscipit, turpis ac lacinia vulputate, enim risus congue sem, ut semper urna purus ut ex.</p>
+      <div class="row"><div class="col-lg-8 col-lg-offset-2">
+        <h2>About</h2>
+        <p>Hello, I'm Jerahmeel, or Mel for short. I write programs for a living and for fun. I probably write in C# and TypeScript the most but my favorite language is actually <a href="https://www.rust-lang.org/">rust!</a></p>
+        <p>When I'm not coding, I could be gaming in my PC, reading, or travelling to interesting places. I've just moved to Melbourne with my partner and we're really excited to go exploring the whole continent!</p>
+      </div></div>
+
     </div>
   </section>
 
   <section id="projects" class="content-section">
     <div class="container">
-      <h2>Projects</h2>
-      WIP
-    </div>
-  </section>
-
-  <section id="contact" class="content-section">
-    <div class="container">
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
-          <h2>Contact</h2>
-          WIP
+          <h2>Projects</h2>
+
+          <div class="row project">
+              <div class="col-md-3 project-icon">
+                <a href="https://github.com/sanisoclem/Calcver.Net">
+                    <img src="https://placeimg.com/250/250/tech/grayscale" />
+                </a>
+              </div>
+              <div class="col-md-9">
+                <h4><a href="https://github.com/sanisoclem/Calcver.Net">Calcver.Net</a></h4>
+                <p>Automatic versioning using <a href="https://semver.org/">SemVer2</a> and <a href="https://www.conventionalcommits.org">Conventional Commits</a>. This is a CLI packaged as a dotnet tool.</p>
+                <p>This tool can pick the right version based on commit messages and even generate change logs. This was designed with the <a href="https://docs.gitlab.com/ee/workflow/gitlab_flow.html#release-branches-with-gitlab-flow">Release Branches GitLab Flow</a> in mind. Merges to master are treated as pre-releases and the tool automatically computes the appropriate release number. Stable releases must be manually tagged, using the pre-release numbers as a hint. </p>
+              </div>
+          </div>
+          <div class="row project">
+            <div class="col-md-3 project-icon">
+              <a href="#">
+                  <img src="https://placeimg.com/200/200/tech/grayscale" />
+              </a>
+            </div>
+            <div class="col-md-9">
+              <h4><a href="https://github.com/sanisoclem/Konsole">Konsole</a></h4>
+              <p>Utility to write console applications <em>WebHostBuilder</em> style. Includes support for DI, Configuration, Options and Logging.</p>
+            </div>
+          </div>
+
+          <div class="row project">
+              <div class="col-md-3 project-icon">
+                <a href="#">
+                    <svg viewBox="0 0 400 400">
+                          <g>
+                           <path fill="#000" stroke="#000" stroke-width="0" d="m0,0l400,0l0,400l-400,0l0,-400z" id="svg_3"/>
+                           <text fill="#fff" stroke="#fff" stroke-width="0" x="45.5" y="341.4375" id="svg_4" font-size="178" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve">Co</text>
+                           <text fill="#fff" stroke="#fff" stroke-width="0" x="289.5" y="99.4375" id="svg_5" font-size="47" font-family="Helvetica, Arial, sans-serif" text-anchor="start" xml:space="preserve">27</text>
+                          </g>
+                         </svg>
+                </a>
+              </div>
+              <div class="col-md-9">
+                <h4><a href="https://github.com/sanisoclem/cobalt">Cobalt</a></h4>
+                Very early work. <a href="https://elm-lang.org/">Elm</a>-inspired rust-wasm framework using <a href="https://github.com/rustwasm/wasm-bindgen">wasm_bindgen</a>. I'm writing this to learn more about rust and Elm at the same time.
+              </div>
+            </div>
         </div>
       </div>
     </div>
   </section>
 
+  <section id="contact" class="content-section">
+    <div class="container">
+      <h2>Leave a message!</h2>
+      <ul class="contacts">
+        <li class="">
+          <a href="https://www.linkedin.com/in/jerahmeel-cosinas/" title="LinkedIn">
+            <svg viewBox="0 0 24 24" class="contact-icon"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+            <span class="link-label">
+              LinkedIn
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="https://github.com/sanisoclem" title="GitHub">
+            <svg class="contact-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+            <span class="link-label">
+              GitHub
+            </span>
+          </a>
+        </li>
+        <li class="">
+          <a href="mailto:contact@jerahmeelcosinas.net;" title="Email">
+            <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+            <span class="link-label">
+              Email
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 </body>
 </html>
