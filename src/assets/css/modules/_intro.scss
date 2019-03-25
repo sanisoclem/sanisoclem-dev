@@ -1,9 +1,18 @@
 #intro {
   font-size: 1.5rem;
   text-align: center;
-  background: $primary-color-dark url(../img/bg.webp) no-repeat center center scroll;
+  background-position: center center;
+  background-color: $primary-color-dark;
   background-size: cover;
   background-attachment: fixed;
+
+  .no-webp & {
+    background-image: url(../img/bg.png);
+  }
+
+  .webp & {
+    background-image: url(../img/bg.webp);
+  }
 
   .brand {
     background: rgba($foreground-color,0.1);
