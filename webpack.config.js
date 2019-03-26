@@ -16,8 +16,8 @@ module.exports = {
     rules: [
       // no need to use babel to transpile to es2015 since async imports and wasm is not supported on old browsers anyway
       {
-        test: /\.styl$/,
-        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader']
+        test: /\.s(c|a)ss$/,
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       {
         test: /\.(gif|png|jpe?g|svg|jxr|webp)$/i,
