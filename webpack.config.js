@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: "./loader.js",
@@ -50,7 +51,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
         }),
+        new CopyWebpackPlugin([
+            { from: './src/assets/icons', to: 'assets/icons' },
+        ]),
         new CleanWebpackPlugin(),
         new WebpackMd5Hash()
-    ],
+    ]
 };
