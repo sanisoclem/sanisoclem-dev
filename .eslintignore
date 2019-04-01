@@ -1,0 +1,5 @@
+**/*.min.js
+
+# ignoring for now, until I figure out how to override
+# module type for webpack (code executing in node vs browser)
+webpack.*.js
