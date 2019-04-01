@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     entry: "./loader.js",
@@ -37,20 +39,24 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,
-            hash: true,
+            hash: false,
             template: './src/error.html',
             filename: 'error.html'
         }),
         new HtmlWebpackPlugin({
             inject: true,
-            hash: true,
+            hash: false,
             template: './src/index.html',
             filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
         }),
+        new CopyWebpackPlugin([
+            { from: './src/assets/icons', to: 'assets/icons' },
+        ]),
+        new WorkboxPlugin.GenerateSW(),
         new CleanWebpackPlugin(),
         new WebpackMd5Hash()
-    ],
+    ]
 };
