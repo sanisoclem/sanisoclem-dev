@@ -39,13 +39,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             inject: true,
-            hash: true,
+            hash: false,
             template: './src/error.html',
             filename: 'error.html'
         }),
         new HtmlWebpackPlugin({
             inject: true,
-            hash: true,
+            hash: false,
             template: './src/index.html',
             filename: 'index.html'
         }),
