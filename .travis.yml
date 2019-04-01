@@ -21,7 +21,7 @@ stages:
 install:
   - yarn
 
-script: echo no tests
+script: yarn eslint .
 
 
 DEPLOY_TO_S3: &DEPLOY_TO_S3
