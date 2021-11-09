@@ -1,4 +1,5 @@
 <script context="module" lang="ts">
+	 import { scrollRef } from 'svelte-scrolling'
 	import Header from '$lib/Header.svelte';
 	import Intro from '$lib/Intro.svelte';
 	import About from '$lib/About.svelte';
@@ -20,6 +21,7 @@
 	<Header />
 
 	<section
+		use:scrollRef={'intro'}
 		class="scrollable-section main-section bg-fixed bg-cover text-center bg-black bg-center flex flex-col justify-center"
 		id="intro"
 		style="background-image:url('{bg}')"
@@ -27,15 +29,15 @@
 		<Intro />
 	</section>
 
-	<section id="about" class="scrollable-section main-section">
+	<section use:scrollRef={'about'} id="about" class="scrollable-section main-section">
 		<About />
 	</section>
 
-	<section id="projects" class="scrollable-section main-section bg-green-800">
+	<section use:scrollRef={'projects'} id="projects" class="scrollable-section main-section bg-green-800">
 		<Projects />
 	</section>
 
-	<section id="contact" class="scrollable-section main-section">
+	<section use:scrollRef={'contact'} id="contact" class="scrollable-section main-section">
 		<Contact />
 	</section>
 </ScrollSpy>

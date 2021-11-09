@@ -1,3 +1,6 @@
+<script lang="ts">
+  import { scrollTo } from 'svelte-scrolling';
+</script>
 <h1 class="mx-auto bg-white bg-opacity-10 p-8 text-4xl uppercase">
   <span>Jerahmeel Cosinas</span>
 </h1>
@@ -6,7 +9,7 @@
 <p class="description" />
 
 <div>
-  <a href="#about" class="block mx-auto h-10 w-10 text-white rounded-full bg-gray-900 bg-opacity-50 pulse">
+  <a href="#about" use:scrollTo={'about'} class="block mx-auto h-10 w-10 text-white rounded-full bg-gray-900 bg-opacity-50 pulse">
     <span class="pointer-events-none material-icons leading-10">arrow_downward</span>
   </a>
 </div>

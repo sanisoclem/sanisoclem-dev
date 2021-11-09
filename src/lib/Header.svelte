@@ -1,7 +1,7 @@
 <script lang="ts">
-	import NavLink from '$lib/NavLink.svelte';
-import About from './About.svelte';
+	import InPageLink from '$lib/InPageLink.svelte';
 	import { activeSectionId } from './store'
+	import { scrollTo } from 'svelte-scrolling';
 
 	const headerColorClasses = {
 		'about': 'bg-gray-900',
@@ -13,7 +13,6 @@ import About from './About.svelte';
 	let aboutActive: boolean;
 	let projectsActive: boolean;
 	let contactActive: boolean;
-	let headerClass = '';
 
 	activeSectionId.subscribe(id => {
 		introActive = id === 'intro';
@@ -27,7 +26,7 @@ import About from './About.svelte';
 <header class:bg-gray-900={aboutActive || contactActive} class:bg-green-800={projectsActive} class:bg-black={introActive} class="transition-color duration-200 z-50 fixed w-screen text-white">
 	<div class="mx-auto px-8 py-2 container max-w-screen-xl">
 		<div class="flex justify-between gap-x-2">
-			<a href="#intro" id="intro-link" class="flex block gap-x-2 hover:text-yellow-500 transition-colors duration-75">
+			<a href="#intro" use:scrollTo={'intro'} id="intro-link" class="flex block gap-x-2 hover:text-yellow-500 transition-colors duration-75">
 				<svg viewBox="0 0 10 10" class="logo h-10 w-10">
 					<g>
 						<path class="stroke-current transition-all duration-200" d="M4,1l4,0l0,4l0,4l-5,0l0,-3" />
@@ -38,9 +37,9 @@ import About from './About.svelte';
 
 			<nav class="">
 				<ul class="hidden md:flex items-center gap-x-4">
-					<NavLink href="#about" title="About" active={aboutActive} ></NavLink>
-					<NavLink href="#projects" title="Projects" active={projectsActive} ></NavLink>
-					<NavLink href="#contact" title="Contact" active={contactActive} ></NavLink>
+					<InPageLink href="about" title="About" active={aboutActive} ></InPageLink>
+					<InPageLink href="projects" title="Projects" active={projectsActive} ></InPageLink>
+					<InPageLink href="contact" title="Contact" active={contactActive} ></InPageLink>
 				</ul>
 			</nav>
 		</div>

@@ -8,6 +8,7 @@ specifiers:
   '@types/cookie': ^0.4.1
   '@typescript-eslint/eslint-plugin': ^4.31.1
   '@typescript-eslint/parser': ^4.31.1
+  add: ^2.0.6
   autoprefixer: ^10.3.7
   cookie: ^0.4.1
   cssnano: ^5.0.8
@@ -21,6 +22,7 @@ specifiers:
   svelte: ^3.34.0
   svelte-check: ^2.2.6
   svelte-preprocess: ^4.9.8
+  svelte-scrolling: ^1.1.1
   tailwindcss: ^2.2.16
   tslib: ^2.3.1
   typescript: ^4.4.3
@@ -36,6 +38,7 @@ devDependencies:
   '@types/cookie': 0.4.1
   '@typescript-eslint/eslint-plugin': 4.33.0_cc617358c89d3f38c52462f6d809db4c
   '@typescript-eslint/parser': 4.33.0_eslint@7.32.0+typescript@4.4.4
+  add: 2.0.6
   autoprefixer: 10.4.0_postcss@8.3.11
   cssnano: 5.0.10_postcss@8.3.11
   eslint: 7.32.0
@@ -48,6 +51,7 @@ devDependencies:
   svelte: 3.44.1
   svelte-check: 2.2.8_12c78e77d52b6508fc8705d47f1a4eb4
   svelte-preprocess: 4.9.8_1efe055846dc052112d100fb64c56a4d
+  svelte-scrolling: 1.1.1_svelte@3.44.1
   tailwindcss: 2.2.19_0c54bdadaf9d9c9c6c134cb2c6c061a3
   tslib: 2.3.1
   typescript: 4.4.4
@@ -367,6 +371,10 @@ packages:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
     engines: {node: '>=0.4.0'}
     hasBin: true
+    dev: true
+
+  /add/2.0.6:
+    resolution: {integrity: sha1-JI8Kn25aUo7yKV2+7DBTITCuIjU=}
     dev: true
 
   /ajv/6.12.6:
@@ -2470,6 +2478,14 @@ packages:
       strip-indent: 3.0.0
       svelte: 3.44.1
       typescript: 4.4.4
+    dev: true
+
+  /svelte-scrolling/1.1.1_svelte@3.44.1:
+    resolution: {integrity: sha512-QnVZZnF+SPZVDCV9RVvgjSQm50gNuJil+XO/fmuR9gkSA7z5UdT+XW48MZAlV1zrUdWwChyDGUU4xzmJkdN9jg==}
+    peerDependencies:
+      svelte: ^3.38.3
+    dependencies:
+      svelte: 3.44.1
     dev: true
 
   /svelte/3.44.1:
