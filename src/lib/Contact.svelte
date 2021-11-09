@@ -2,11 +2,11 @@
 	import bg from './contact_bg.png';
 </script>
 
-<div class="flex justify-center">
-	<img src={bg} alt="my cats" title="my cats say hello!" />
+<div class="container max-w-screen-md mx-auto flex justify-center flex-col md:flex-row items-center">
+	<img src={bg} alt="my cats" class="max-w-xs md:max-w-sm flex-grow-0" title="my cats say hello!" />
 
-	<div class="flex flex-col justify-center">
-		<h2 class="text-4xl mb-16">
+	<div class="flex flex-col justify-center flex-grow">
+		<h2 class="text-4xl mb-16 text-center">
 			<span>Leave a message!</span>
 		</h2>
 		<ul class="flex justify-around w-full text-white">
@@ -33,19 +33,24 @@
 </div>
 
 <style>
+	@keyframes wobble {
+		30% { transform: scale(1.2); }
+		40%, 60% { transform: rotate(-20deg) scale(1.2); }
+		50% { transform: rotate(20deg) scale(1.2); }
+		70% { transform: rotate(0deg) scale(1.2); }
+		100% { transform: scale(1); }
+	}
   .contact-icon {
-    @apply h-10 w-10 block mx-auto mb-2 transition-all duration-75 ease-in-out fill-current;
+    @apply h-14 w-14 block mx-auto mb-2 transition-all duration-75 ease-in-out fill-current;
+		animation-fill-mode: both;
   }
+	.contact-icon:hover {
+		animation: wobble 0.7s cubic-bezier(0.4, 0, 0.6, 1);
+	}
   .contact-link > a {
     @apply text-center block hover:text-yellow-200;
   }
   .link-label {
-    @apply transition-all duration-75;
-    opacity: 0;
-    visibility: hidden;
-  }
-  .contact-link > a:hover .link-label {
-    opacity: 1;
-    visibility: visible;
+    display: none;
   }
 </style>

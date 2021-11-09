@@ -1,5 +1,5 @@
 <div class="mx-auto px-8 py-2 max-w-screen-md">
-	<h2 class="text-4xl uppercase my-16">About</h2>
+	<h2 class="text-4xl uppercase mb-16">About</h2>
 	<p class="text-xl mb-8 text-justify">
 		Hello, I'm Jerahmeel. I write code for a living and for fun. Nowadays, I code mostly in F# and
 		Typescript for my day job.

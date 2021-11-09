@@ -38,6 +38,6 @@
 
 <style>
 	.main-section {
-		@apply pt-14 min-h-screen flex flex-col justify-center;
+		@apply pb-8 pt-14 min-h-screen flex flex-col justify-center;
 	}
 </style>
