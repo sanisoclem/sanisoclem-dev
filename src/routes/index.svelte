@@ -42,6 +42,8 @@
 	</section>
 </ScrollSpy>
 
+<footer class="text-center py-2 text-xs"><a class="hover:text-yellow-500" href="https://github.com/sanisoclem/sanisoclem-dev">view src</a> </footer>
+
 <style>
 	.main-section {
 		@apply pb-8 pt-14 min-h-screen flex flex-col justify-center;
