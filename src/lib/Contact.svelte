@@ -12,19 +12,19 @@
 		<ul class="flex justify-around w-full text-white">
 			<li class="contact-link">
 				<a href="https://www.linkedin.com/in/jerahmeel-cosinas/" title="LinkedIn">
-          <svg viewBox="0 0 24 24" class="contact-icon"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/></svg>
+          <svg class="contact-icon contact-icon-64" viewBox="0 0 64 64"><path stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M3.078 22.331h12.188v36.844H3.078z"></path><path d="M46.719 21.112c-5.344 0-8.531 1.969-11.906 6.281v-5.062H22.625v36.844h12.281V39.206c0-4.219 2.156-8.344 7.031-8.344s7.781 4.125 7.781 8.25v20.063H62V38.269c0-14.532-9.844-17.157-15.281-17.157z" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"></path><path d="M9.219 4.425C5.188 4.425 2 7.331 2 10.894s3.188 6.469 7.219 6.469 7.219-2.906 7.219-6.469-3.188-6.469-7.219-6.469z" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2"></path></svg>
 					<span class="link-label"> LinkedIn </span>
 				</a>
 			</li>
 			<li class="contact-link">
 				<a href="https://github.com/sanisoclem" title="GitHub">
-          <svg class="contact-icon" viewBox="0 0 16 16" version="1.1" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+          <svg class="contact-icon" viewBox="0 0 24 24" version="1.1" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
 					<span class="link-label"> GitHub </span>
 				</a>
 			</li>
 			<li class="contact-link">
 				<a href="mailto:contact@jerahmeelcosinas.net;" title="Email">
-          <svg class="contact-icon" viewBox="0 0 24 24"><path d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
+          <svg class="contact-icon" viewBox="2 0 20 20"><path d="m18.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z"/></svg>
 					<span class="link-label"> Email </span>
 				</a>
 			</li>
@@ -40,12 +40,23 @@
 		70% { transform: rotate(0deg) scale(1.2); }
 		100% { transform: scale(1); }
 	}
+	@keyframes dash {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
   .contact-icon {
-    @apply h-14 w-14 block mx-auto mb-2 transition-all duration-75 ease-in-out fill-current;
+    @apply h-14 w-14 block mx-auto mb-2 transition-all duration-75 ease-in-out stroke-current;
 		animation-fill-mode: both;
+		fill: transparent;
   }
 	.contact-icon:hover {
-		animation: wobble 0.7s cubic-bezier(0.4, 0, 0.6, 1);
+		stroke-dasharray: 10 1;
+		stroke-dashoffset: -20;
+		animation: wobble 0.7s cubic-bezier(0.4, 0, 0.6, 1), dash 0.5s linear infinite;
+	}
+	.contact-icon-64:hover {
+		stroke-dasharray: 30 3;
 	}
   .contact-link > a {
     @apply text-center block hover:text-yellow-200;
