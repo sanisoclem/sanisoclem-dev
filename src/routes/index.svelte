@@ -1,0 +1,43 @@
+<script context="module" lang="ts">
+	import Header from '$lib/Header.svelte';
+	import Intro from '$lib/Intro.svelte';
+	import About from '$lib/About.svelte';
+	import Projects from '$lib/Projects.svelte';
+	import Contact from '$lib/Contact.svelte';
+	export const prerender = true;
+</script>
+<script lang="ts">
+	import bg from './bg.png';
+</script>
+
+<svelte:head>
+	<title>Jerahmeel Cosinas</title>
+</svelte:head>
+
+<Header />
+
+<section
+	class="main-section bg-fixed bg-cover text-center bg-black bg-center flex flex-col justify-center"
+	id="intro"
+	style="background-image:url('{bg}')"
+>
+	<Intro />
+</section>
+
+<section id="about" class="main-section">
+	<About />
+</section>
+
+<section id="projects" class="main-section bg-green-800">
+	<Projects />
+</section>
+
+<section id="contact" class="main-section">
+	<Contact />
+</section>
+
+<style>
+	.main-section {
+		@apply pt-14 min-h-screen flex flex-col justify-center;
+	}
+</style>
