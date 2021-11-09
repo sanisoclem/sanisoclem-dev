@@ -1,8 +1,30 @@
 <script lang="ts">
 	import NavLink from '$lib/NavLink.svelte';
+import About from './About.svelte';
+	import { activeSectionId } from './store'
+
+	const headerColorClasses = {
+		'about': 'bg-gray-900',
+		'projects': 'bg-green-500',
+		'contact': 'bg-gray-900',
+	}
+
+	let introActive: boolean;
+	let aboutActive: boolean;
+	let projectsActive: boolean;
+	let contactActive: boolean;
+	let headerClass = '';
+
+	activeSectionId.subscribe(id => {
+		introActive = id === 'intro';
+		aboutActive = id === "about";
+		projectsActive = id === "projects";
+		contactActive = id === "contact";
+	});
+
 </script>
 
-<header class="z-50 fixed w-screen shadow-lg bg-gray-900 text-white border-b-2 border-dashed border-gray-700">
+<header class:bg-gray-900={aboutActive || contactActive} class:bg-green-800={projectsActive} class:bg-black={introActive} class="transition-color duration-200 z-50 fixed w-screen text-white">
 	<div class="mx-auto px-8 py-2 container max-w-screen-xl">
 		<div class="flex justify-between gap-x-2">
 			<a href="#intro" id="intro-link" class="flex block gap-x-2 hover:text-yellow-500 transition-colors duration-75">
@@ -16,9 +38,9 @@
 
 			<nav class="">
 				<ul class="hidden md:flex items-center gap-x-4">
-					<NavLink href="#about" title="About" ></NavLink>
-					<NavLink href="#projects" title="Projects"></NavLink>
-					<NavLink href="#contact" title="Contact"></NavLink>
+					<NavLink href="#about" title="About" active={aboutActive} ></NavLink>
+					<NavLink href="#projects" title="Projects" active={projectsActive} ></NavLink>
+					<NavLink href="#contact" title="Contact" active={contactActive} ></NavLink>
 				</ul>
 			</nav>
 		</div>
