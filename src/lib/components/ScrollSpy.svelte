@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { activeSectionId } from './store';
+	import { activeSectionId } from '../store';
 
   let container: HTMLElement;
 	let sections: String[];

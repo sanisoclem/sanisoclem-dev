@@ -1,16 +1,17 @@
 <script context="module" lang="ts">
-	 import { scrollRef } from 'svelte-scrolling'
-	import Header from '$lib/Header.svelte';
-	import Intro from '$lib/Intro.svelte';
-	import About from '$lib/About.svelte';
-	import Projects from '$lib/Projects.svelte';
-	import Contact from '$lib/Contact.svelte';
-	import ScrollSpy from '$lib/ScrollSpy.svelte';
 	export const prerender = true;
 </script>
 
 <script lang="ts">
-	import bg from './bg.png';
+	import { scrollRef } from 'svelte-scrolling'
+	import Header from '$lib/components/Header.svelte';
+	import Intro from '$lib/components/Intro.svelte';
+	import About from '$lib/components/About.svelte';
+	import Projects from '$lib/components/Projects.svelte';
+	import Contact from '$lib/components/Contact.svelte';
+	import ScrollSpy from '$lib/components/ScrollSpy.svelte';
+	import bg from '$lib/assets/bg.png';
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -37,15 +38,22 @@
 		<Projects />
 	</section>
 
-	<section use:scrollRef={'contact'} id="contact" class="scrollable-section main-section">
+	<section use:scrollRef={'contact'} id="contact" class="scrollable-section main-section  bg-gray-800">
 		<Contact />
 	</section>
 </ScrollSpy>
 
-<footer class="text-center py-2 text-xs"><a class="hover:text-yellow-500" href="https://github.com/sanisoclem/sanisoclem-dev">view src</a> </footer>
+<footer use:scrollRef={'footer'} id="footer" class="py-8">
+	<Footer />
+</footer>
+
 
 <style>
 	.main-section {
 		@apply pb-8 pt-14 min-h-screen flex flex-col justify-center;
+	}
+
+	#footer {
+		min-height: 0;
 	}
 </style>

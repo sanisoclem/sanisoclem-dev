@@ -1,15 +1,10 @@
 <script lang="ts">
   import { scrollTo } from 'svelte-scrolling';
+  export let anchor: string;
 </script>
-<h1 class="mx-auto bg-white bg-opacity-10 p-8 text-4xl uppercase">
-  <span>Jerahmeel Cosinas</span>
-</h1>
 
-<p class="tagline p-4">Programmer · Curious</p>
-<p class="description" />
-
-<div>
-  <a href="#about" use:scrollTo={'about'} class="block mx-auto h-10 w-10 text-white rounded-full bg-gray-900 bg-opacity-50 pulse">
+<div class="mt-20">
+  <a href="#{anchor}" use:scrollTo={anchor} class="text-center block mx-auto h-10 w-10 text-white rounded-full bg-gray-900 bg-opacity-50 pulse">
     <span class="pointer-events-none material-icons leading-10">arrow_downward</span>
   </a>
 </div>
