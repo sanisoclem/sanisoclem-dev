@@ -86,7 +86,7 @@
 	<div class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
 		<div class="max-w-screen-lg flex mx-auto p-10 gap-x-6">
 			<div class="w-9 flex-shrink-0 hidden md:flex flex-col gap-y-4 items-center">
-				<img src={data.basics.image} alt={data.basics.name} class="w-9 mx-auto" />
+				<a href="/"><img src={data.basics.image} alt={data.basics.name} class="w-9 mx-auto" /></a>
 				<svg on:click={toggleDarkMode}
           class:dark={darkMode}
 					class="cursor-pointer h-9 w-9 dark-toggle transition-all duration-200"
