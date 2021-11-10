@@ -1,0 +1,141 @@
+{
+  "basics": {
+    "name": "Jerahmeel Cosinas",
+    "label": "Software Developer",
+    "image": "https://bf08e23e.sanisoclem-dev.pages.dev/android-chrome-512x512.png",
+    "email": "contact@jerahmeelcosinas.net",
+    "phone": "0481 091 956",
+    "url": "jerahmeelcosinas.net",
+    "summary": "I like to build stuff",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Melbourne",
+      "countryCode": "AU",
+      "region": "VIC"
+    },
+    "profiles": [
+      {
+        "network": "Github",
+        "username": "sanisoclem",
+        "url": "https://github.com/sanisoclem"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "jerahmeel-cosinas",
+        "url": "https://www.linkedin.com/in/jerahmeel-cosinas/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Liberty Financial",
+      "position": "Software Developer",
+      "url": "https://liberty.com.au",
+      "startDate": "May 2019",
+      "endDate": "",
+      "summary": " - Joined as part of the squad that supports the Car loan business. I mostly worked with F# and TypeScript/Angular but would sometimes need to use C# or VB when supporting some of our older applications.\n - I also worked a lot on event based, distributed systems and am part of a working group that is exploring this area.\n - I'm also part of a group working on frontend design standards and a company design system.",
+      "highlights": []
+    },
+    {
+      "name": "Credit Agricole CIB",
+      "country": "Singapore",
+      "position": "Software Developer",
+      "url": "https://www.ca-cib.com/",
+      "startDate": "Jun 2011",
+      "endDate": "Apr 2019",
+      "summary": " - Worked primarily on internal facing web apps as part of the communications team for the first 5 years. I also worked on maturing our tech stack which was primarily asp.net/sharepoint/jquery/TFS when I first joined, to developing SPAs in knockoutjs, and later angularjs, with a C# backend using git(lab).\n - I then moved to the Risk IT team, still working on internal web applications, but this time working mostly in Angular and C# in dotnet core. I also worked on some projects that involved working with Kafka and kubernetes.\n - I was also part of a team that explored some of the possibilities with Ethereum smart contracts. We developed a prototype document signing application in Ethereum.",
+      "highlights": []
+    },
+    {
+      "name": "Bank De Oro",
+      "country": "Philippines",
+      "position": "Software Developer",
+      "url": "https://liberty.com.au",
+      "startDate": "Nov 2010",
+      "endDate": "Apr 2011",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "Deutsche Knowledge Services",
+      "country": "Philippines",
+      "position": "Software Developer",
+      "url": "",
+      "startDate": "Sep 2008",
+      "endDate": "Sep 2010",
+      "summary": "",
+      "highlights": []
+    },
+    {
+      "name": "Citigroup Business Process Solutions",
+      "country": "Philippines",
+      "position": "MIS Officer",
+      "url": "",
+      "startDate": "Dec 2006",
+      "endDate": "Mar 2008",
+      "summary": "",
+      "highlights": []
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "I did not finish high school and so do not have formal education. However, I have been studying programming for a long time and I’m always pushing myself to learn new things.\n\nI'm a big fan of functional languages and also rust (which I think is a very unique and interesting language). At the moment, these are the things that I'm working on getting better at and would like to use them even more moving forward.",
+      "area": "",
+      "studyType": "",
+      "startDate": "",
+      "endDate": "",
+      "gpa": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "publications": [],
+  "skills": [
+    {
+      "name": "F#",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Rust",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "ReScript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Terraform (Azure)",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "C#",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Typescript",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Angular",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "React",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [],
+  "interests": [],
+  "references": [],
+  "projects": []
+}
