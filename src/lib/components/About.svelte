@@ -1,3 +1,7 @@
+<script lang="ts">
+  import GoDown from "./GoDown.svelte";
+</script>
+
 <div class="mx-auto px-8 py-2 max-w-screen-md">
 	<h2 class="text-4xl uppercase mb-16">About</h2>
 	<p class="text-xl mb-8 text-justify">
@@ -14,9 +18,10 @@
 		support for them to be almost non-existent, so it's on hold for now 😥.
 	</p>
 	<p class="text-md text-justify">
-		TL;DR: I like technology and I like to build stuff. If you think I'm a good fit for your team,
-		let's talk. <a href="#contact" class="point-down inline-block text-lg">👇</a>
+		TL;DR: I like technology and I like to build stuff!
 	</p>
+
+	<GoDown anchor="projects" />
 </div>
 
 <style>
@@ -27,8 +32,5 @@
 		100% {
 			transform: translateY(5px);
 		}
-	}
-	.point-down:hover {
-		animation: point-down 0.5s ease-in-out alternate-reverse infinite;
 	}
 </style>
