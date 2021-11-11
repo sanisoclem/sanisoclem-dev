@@ -84,7 +84,7 @@
 
 <div class:dark={darkMode}>
 	<div
-		class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white print:text-gray-900 print:dark:text-gray-900 print:dark:bg-transparent"
+		class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white print:text-gray-900 print:dark:text-gray-900 print:dark:bg-transparent"
 	>
 		<div class="max-w-screen-lg flex mx-auto p-10 gap-x-6 print:block print:py-0">
 			<div class="w-9 flex-shrink-0 hidden md:flex flex-col gap-y-6 items-center print:hidden">
@@ -129,7 +129,7 @@
 						<line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
 					</g>
 				</svg>
-				<a href="/cv.pdf">
+				<a href="/cv.pdf" rel=external>
 					<svg class="h-9 w-9 utility-icon" viewBox="0 0 550.801 550.801">
 						<path
 							class="fill-current"
