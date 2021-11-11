@@ -173,7 +173,7 @@
 						</div>
 					</div>
 					<div class="font-semibold">{data.basics.label}</div>
-					<ul class="summary-list flex gap-x-2 text-sm text-gray-500 font-light">
+					<ul class="summary-list flex gap-2 text-sm text-gray-500 font-light flex-col md:flex-row">
 						<li>{data.basics.location.city}, {data.basics.location.region}</li>
 						<li><a href="https://{data.basics.url}">{data.basics.url}</a></li>
 						<li><a href="mailto:{data.basics.email}">{data.basics.email}</a></li>
@@ -261,7 +261,7 @@
 	}
 
 	.summary-list > li:not(:first-child)::before {
-		content: '|';
+		content: '|>';
 		margin-right: 0.5rem;
 	}
 
