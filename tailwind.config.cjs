@@ -5,8 +5,12 @@ const config = {
 	purge: ['./src/**/*.{html,js,svelte,ts}'],
 	darkMode: 'class',
 	theme: {
-
-		extend: {}
+		extend: {
+			screens: {
+				print: { raw: 'print' }
+				// => @media print { ... }
+			}
+		}
 	},
 
 	plugins: []
