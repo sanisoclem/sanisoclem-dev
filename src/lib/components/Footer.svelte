@@ -6,9 +6,8 @@
 		<p>
 			This site was made with <a class="external-link" href="https://kit.svelte.dev/">SvelteKit</a>
 			and <a class="external-link" href="https://tailwindcss.com/docs">Tailwind CSS</a>, and is
-			hosted by <a class="external-link" href="https://pages.cloudflare.com/">Cloudflare Pages</a> 💖.
+			hosted by <a class="external-link" href="https://pages.cloudflare.com/">Cloudflare Pages</a> 💖
 		</p>
-
 	</div>
 	<div class="">
 		<ul class="flex justify-center gap-x-4 md:gap-x-8 md:mt-5">
@@ -46,7 +45,10 @@
 				</a>
 			</li>
 			<li>
-				<a href="https://github.com/sanisoclem/sanisoclem-dev" class="block hover:text-yellow-500 flex gap-x-2">
+				<a
+					href="https://github.com/sanisoclem/sanisoclem-dev"
+					class="block hover:text-yellow-500 flex gap-x-2"
+				>
 					<svg class="h-8 w-8 fill-current" viewBox="3 3 18 18">
 						<g id="code" opacity="0.75">
 							<path
@@ -76,7 +78,7 @@
 	</div>
 </div>
 
-<style>
+<style lang="postcss">
 	.fill-transparent {
 		fill: none;
 	}

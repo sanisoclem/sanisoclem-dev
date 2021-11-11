@@ -3,12 +3,6 @@
 	import { activeSectionId } from '../store';
 	import { scrollTo } from 'svelte-scrolling';
 
-	const headerColorClasses = {
-		about: 'bg-gray-900',
-		projects: 'bg-green-500',
-		contact: 'bg-gray-900'
-	};
-
 	let introActive: boolean;
 	let aboutActive: boolean;
 	let projectsActive: boolean;
@@ -52,7 +46,6 @@
 				<InPageLink href="about" title="About" active={aboutActive} />
 				<InPageLink href="projects" title="Projects" active={projectsActive} />
 				<InPageLink href="contact" title="Contact" active={contactActive} />
-
 			</nav>
 		</div>
 	</div>
