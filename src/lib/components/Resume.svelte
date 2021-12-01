@@ -225,7 +225,7 @@
 						</div>
 					</div>
 				</section>
-				<footer class="hidden print:block mt-10 w-full">
+				<footer class="hidden mt-10 w-full">
 					<sub
 						>also available online @ <a href="https://jerahmeelcosinas.net/cv"
 							>https://jerahmeelcosinas.net/cv</a
