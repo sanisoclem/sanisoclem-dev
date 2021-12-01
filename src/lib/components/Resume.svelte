@@ -179,11 +179,6 @@
 						<li><a href="mailto:{data.basics.email}">{data.basics.email}</a></li>
 						<li><a href="tel:{data.basics.phone}">{data.basics.phone}</a></li>
 					</ul>
-					<p
-						class="text-sm text-gray-500 dark:text-white italic pt-4 print:text-gray-900 print:dark:text-gray-900"
-					>
-						{data.basics.summary}
-					</p>
 				</section>
 				<section class="space-y-6 mb-10">
 					<h2 class="uppercase text-xs text-gray-500 font-bold tracking-widest">Work Experience</h2>
