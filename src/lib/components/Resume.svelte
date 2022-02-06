@@ -213,7 +213,7 @@
 						<div class="flex flex-wrap gap-4">
 							{#each data.skills as skill}
 								<span
-									class="bg-yellow-400 dark:bg-yellow-600 px-2 print:border-black print:border-solid print:border-1 print:dark:bg-yellow-400"
+									class="bg-amber-400 dark:bg-amber-600 px-2 print:border-black print:border-solid print:border-1 print:dark:bg-amber-400"
 									>{skill.name}</span
 								>
 							{/each}
@@ -261,7 +261,7 @@
 	}
 
 	a {
-		@apply hover:text-yellow-500;
+		@apply hover:text-amber-500;
 	}
 
 	.markdown {
