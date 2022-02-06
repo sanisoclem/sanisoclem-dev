@@ -9,7 +9,7 @@
 		any projects yet! As it stands, my github is full of exploratory projects but none of them
 		finished. One day, I hope to have something here 😂.
 	</p>
-	<div class="text-green-800 text-opacity-50">
+	<div class="text-emerald-800 text-opacity-50">
 		<GoDown anchor="contact" />
 	</div>
 </div>

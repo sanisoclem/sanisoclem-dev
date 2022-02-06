@@ -19,7 +19,7 @@
 <header
 	class:bg-gray-900={aboutActive}
 	class:bg-gray-800={contactActive}
-	class:bg-green-800={projectsActive}
+	class:bg-emerald-800={projectsActive}
 	class:bg-black={introActive}
 	class="transition-color duration-200 z-50 fixed w-screen text-white"
 >
@@ -29,7 +29,7 @@
 				href="#intro"
 				use:scrollTo={'intro'}
 				id="intro-link"
-				class="flex block gap-x-2 py-2 hover:text-yellow-500 transition-colors duration-75"
+				class="flex block gap-x-2 py-2 hover:text-amber-500 transition-colors duration-75"
 			>
 				<svg viewBox="0 0 10 10" class="logo h-10 w-10">
 					<g>

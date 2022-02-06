@@ -94,7 +94,7 @@
 		animation: wobble 0.7s cubic-bezier(0.4, 0, 0.6, 1);
 	}
 	.contact-link > a {
-		@apply text-center block hover:text-yellow-500;
+		@apply text-center block hover:text-amber-500;
 	}
 	.link-label {
 		display: none;
