@@ -27,18 +27,9 @@
 		};
 		work: {
 			name: string;
-			country: string;
+			country?: string;
 			position: string;
-			website: string;
-			startDate: string;
-			endDate: string;
-			summary: string;
-			highlights: string[];
-		}[];
-		volunteer: {
-			organization: string;
-			position: string;
-			website: string;
+			url?: string;
 			startDate: string;
 			endDate: string;
 			summary: string;
@@ -53,27 +44,10 @@
 			gpa: string;
 			courses: string[];
 		}[];
-		awards: {
-			title: string;
-			date: string;
-			awarder: string;
-			summary: string;
-		}[];
-		publications: {
-			name: string;
-			publisher: string;
-			releaseDate: string;
-			website: string;
-			summary: string;
-		}[];
 		skills: {
 			name: string;
 			level: string;
 			keywords: string[];
-		}[];
-		languages: {
-			language: string;
-			fluency: string;
 		}[];
 	}
 
@@ -184,10 +158,16 @@
 					<h2 class="uppercase text-xs text-gray-500 font-bold tracking-widest">Work Experience</h2>
 					{#each data.work as work}
 						<div class="space-y-2 no-break">
+
 							<h3 class="text-md font-semibold uppercase">
-								{work.name}<span class="text-sm text-gray-500 ml-2 capitalize font-medium"
-									>{work.country ? `(${work.country})` : ''}</span
-								>
+								{#if work.url}
+									<a href="{work.url}" class="text-base font-semibold hover:underline">{work.name}</a>
+								{:else}
+									<span>{work.name}</span>
+								{/if}
+
+
+								<span class="text-sm text-gray-500 ml-2 capitalize font-medium">{work.country ? `(${work.country})` : ''}</span>
 							</h3>
 							<div class="text-gray-400 font-medium text-sm">
 								<span>{work.position}</span> |

@@ -29,7 +29,7 @@
 				href="#intro"
 				use:scrollTo={'intro'}
 				id="intro-link"
-				class="flex block gap-x-2 py-2 hover:text-amber-500 transition-colors duration-75"
+				class="flex gap-x-2 py-2 hover:text-amber-500 transition-colors duration-75"
 			>
 				<svg viewBox="0 0 10 10" class="logo h-10 w-10">
 					<g>

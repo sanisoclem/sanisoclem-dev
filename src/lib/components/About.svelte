@@ -5,7 +5,7 @@
 <div class="mx-auto px-8 py-2 max-w-screen-md">
 	<h2 class="text-4xl uppercase mb-16">About</h2>
 	<p class="text-xl mb-8 text-justify">
-		Hello, I'm Jerahmeel. I write code for a living and for fun. Nowadays, I code mostly in F# and
+		Hello, I'm Jerahmeel. I write code for a living and for fun. Nowadays, I code mostly in F#, C# and
 		Typescript for my day job.
 	</p>
 	<p class="text-lg mb-8 text-justify">
@@ -15,9 +15,7 @@
 		>,
 		<a class="underline hover:text-amber-500" href="https://www.haskell.org/">haskell</a>, and most
 		recently
-		<a class="underline hover:text-amber-500" href="https://rescript-lang.org/">rescript</a>. I'm
-		also interested in graph databases (tried neo4j and xtdb - very interesting) but found rust
-		support for them to be almost non-existent, so it's on hold for now 😥.
+		<a class="underline hover:text-amber-500" href="https://rescript-lang.org/">rescript</a>.
 	</p>
 	<p class="text-md text-justify">TL;DR: I like technology and I like to build stuff!</p>
 
