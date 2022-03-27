@@ -12,7 +12,7 @@
 	<div class="">
 		<ul class="flex justify-center gap-x-4 md:gap-x-8 md:mt-5">
 			<li>
-				<a href="/cv" class="block hover:text-amber-500 flex gap-x-2">
+				<a href="/cv" class="hover:text-amber-500 flex gap-x-2">
 					<svg class="h-8 w-8 fill-current" viewBox="0 0 28 28">
 						<g transform="translate(3.0000203228173197 8.107751797505504)" class="c">
 							<path
@@ -31,7 +31,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="https://github.com/sanisoclem" class="block hover:text-amber-500 flex gap-x-2">
+				<a href="https://github.com/sanisoclem" class="hover:text-amber-500 flex gap-x-2">
 					<svg
 						class="h-8 w-8 fill-transparent stroke-current"
 						viewBox="0 0 24 24"
@@ -47,7 +47,7 @@
 			<li>
 				<a
 					href="https://github.com/sanisoclem/sanisoclem-dev"
-					class="block hover:text-amber-500 flex gap-x-2"
+					class="hover:text-amber-500 flex gap-x-2"
 				>
 					<svg class="h-8 w-8 fill-current" viewBox="3 3 18 18">
 						<g id="code" opacity="0.75">

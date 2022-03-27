@@ -29,11 +29,20 @@
 	},
 	"work": [
 		{
+		"name": "Credit Clear",
+		"position": "Software Developer",
+		"url": "https://creditclear.com.au",
+		"startDate": "Jan 2022",
+		"endDate": "",
+		"summary": " - I just started",
+		"highlights": []
+	},
+		{
 			"name": "Liberty Financial",
 			"position": "Software Developer",
 			"url": "https://liberty.com.au",
 			"startDate": "May 2019",
-			"endDate": "",
+			"endDate": "Jan 2022",
 			"summary": " - Joined as part of the squad that supports the Car loan business. I mostly worked with F# and TypeScript/Angular but would sometimes need to use C# or VB when supporting some of our older applications.\n - I also worked a lot on event based, distributed systems and am part of a working group that is exploring this area.\n - I'm also part of a group working on frontend design standards and a company design system.",
 			"highlights": []
 		},
@@ -51,7 +60,7 @@
 			"name": "Banco De Oro",
 			"country": "Philippines",
 			"position": "Software Developer",
-			"url": "https://liberty.com.au",
+			"url": "https://bdo.com.ph",
 			"startDate": "Nov 2010",
 			"endDate": "Apr 2011",
 			"summary": "",
