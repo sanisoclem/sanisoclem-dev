@@ -11,7 +11,7 @@
 	</div>
 	<div class="">
 		<ul class="flex justify-center gap-x-4 md:gap-x-8 md:mt-5">
-			<li>
+			<li style="display:none">
 				<a href="/cv" class="hover:text-amber-500 flex gap-x-2">
 					<svg class="h-8 w-8 fill-current" viewBox="0 0 28 28">
 						<g transform="translate(3.0000203228173197 8.107751797505504)" class="c">
