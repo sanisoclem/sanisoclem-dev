@@ -36,17 +36,9 @@
 		</section>
 
 		<section
-			use:scrollRef={'projects'}
-			id="projects"
-			class="scrollable-section main-section bg-emerald-800"
-		>
-			<Projects />
-		</section>
-
-		<section
 			use:scrollRef={'contact'}
 			id="contact"
-			class="scrollable-section main-section  bg-gray-800"
+			class="scrollable-section main-section bg-gray-800"
 		>
 			<Contact />
 		</section>

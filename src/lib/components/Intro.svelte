@@ -6,7 +6,7 @@
 	<span>Jerahmeel Cosinas</span>
 </h1>
 
-<p class="tagline p-4">Programmer · Curious</p>
+<p class="tagline p-4"></p>
 <p class="description" />
 
 <div class="text-black text-opacity-50">
