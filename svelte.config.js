@@ -1,23 +1,14 @@
-import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-cloudflare';
-//import adapter from '@sveltejs/adapter-static';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// Consult https://github.com/sveltejs/svelte-preprocess
-	// for more information about preprocessors
-	preprocess: [
-		preprocess({
-			postcss: true
-		})
-	],
+	preprocess: vitePreprocess(),
 
 	kit: {
 		adapter: adapter(),
-		vite: {
-			optimizeDeps: {
-				exclude: ['marked']
-			}
+		alias: {
+			$lib: 'src/lib'
 		}
 	}
 };

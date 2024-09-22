@@ -1,7 +1,3 @@
-<script context="module" lang="ts">
-	export const prerender = true;
-</script>
-
 <script lang="ts">
 	import { scrollRef } from 'svelte-scrolling';
 	import Header from '$lib/components/Header.svelte';
@@ -55,7 +51,7 @@
 	}
 
 	#contact {
-		min-height: calc(100vh - 116px);
+		min-height: calc(100vh - 124px);
 	}
 
 	#footer {
