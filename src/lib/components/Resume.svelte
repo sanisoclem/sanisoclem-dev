@@ -103,7 +103,7 @@
 						<line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
 					</g>
 				</svg>
-				<a href="/cv.pdf" rel=external>
+				<a href="/cv.pdf" rel="external" title="or just print this page!">
 					<svg class="h-9 w-9 utility-icon" viewBox="0 0 550.801 550.801">
 						<path
 							class="fill-current"
@@ -158,16 +158,16 @@
 					<h2 class="uppercase text-xs text-gray-500 font-bold tracking-widest">Work Experience</h2>
 					{#each data.work as work}
 						<div class="space-y-2 no-break">
-
 							<h3 class="text-md font-semibold uppercase">
 								{#if work.url}
-									<a href="{work.url}" class="text-base font-semibold hover:underline">{work.name}</a>
+									<a href={work.url} class="text-base font-semibold hover:underline">{work.name}</a>
 								{:else}
 									<span>{work.name}</span>
 								{/if}
 
-
-								<span class="text-sm text-gray-500 ml-2 capitalize font-medium">{work.country ? `(${work.country})` : ''}</span>
+								<span class="text-sm text-gray-500 ml-2 capitalize font-medium"
+									>{work.country ? `(${work.country})` : ''}</span
+								>
 							</h3>
 							<div class="text-gray-400 font-medium text-sm">
 								<span>{work.position}</span> |
@@ -200,9 +200,9 @@
 						</div>
 					</div>
 				</section>
-				<footer class="hidden mt-10 w-full">
+				<footer class="hidden print:block mt-10 w-full align-sub text-xs">
 					<sub
-						>also available online @ <a href="https://jerahmeelcosinas.net/cv"
+						>see latest version @ <a href="https://jerahmeelcosinas.net/cv"
 							>https://jerahmeelcosinas.net/cv</a
 						></sub
 					>

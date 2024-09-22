@@ -29,14 +29,14 @@
 	},
 	"work": [
 		{
-		"name": "Credit Clear",
-		"position": "Software Developer",
-		"url": "https://creditclear.com.au",
-		"startDate": "Jan 2022",
-		"endDate": "",
-		"summary": " - I just started",
-		"highlights": []
-	},
+			"name": "Credit Clear",
+			"position": "Software Developer",
+			"url": "https://creditclear.com.au",
+			"startDate": "Jan 2022",
+			"endDate": "",
+			"summary": " - Maintenance and enhancement of an event-driven, highly distributed system written in C#/F#/Typescript and using NServiceBus, RavenDB and React\n - Built integration with new payment gateway\n - Envisioned, prototype, proposed and implemented a new system for solving our integration problems. Early prototype (written during my personal time), can be found here: [https://vmcd.pages.dev/](https://vmcd.pages.dev/).",
+			"highlights": []
+		},
 		{
 			"name": "Liberty Financial",
 			"position": "Software Developer",
@@ -103,17 +103,22 @@
 	"publications": [],
 	"skills": [
 		{
-			"name": "F#",
-			"level": "",
-			"keywords": []
-		},
-		{
 			"name": "Rust",
 			"level": "",
 			"keywords": []
 		},
 		{
-			"name": "ReScript",
+			"name": "F#",
+			"level": "",
+			"keywords": []
+		},
+		{
+			"name": "Purescript",
+			"level": "",
+			"keywords": []
+		},
+		{
+			"name": "C#",
 			"level": "",
 			"keywords": []
 		},
@@ -123,7 +128,7 @@
 			"keywords": []
 		},
 		{
-			"name": "C#",
+			"name": "Bicep",
 			"level": "",
 			"keywords": []
 		},
@@ -134,6 +139,11 @@
 		},
 		{
 			"name": "React",
+			"level": "",
+			"keywords": []
+		},
+		{
+			"name": "Remix",
 			"level": "",
 			"keywords": []
 		},
