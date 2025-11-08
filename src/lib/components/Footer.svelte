@@ -100,11 +100,12 @@
 	</div>
 </div>
 
-<style lang="postcss">
+<style>
+	@reference "../../app.css";
 	.fill-transparent {
 		fill: none;
 	}
 	a.external-link {
-		@apply hover:text-amber-500 bg-white bg-opacity-10 px-1;
+		@apply hover:text-amber-500 bg-white/10 px-1;
 	}
 </style>

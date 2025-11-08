@@ -14,13 +14,13 @@
 	<title>Jerahmeel Cosinas</title>
 </svelte:head>
 
-<div class="text-white bg-gray-900">
+<div class="bg-gray-900 text-white">
 	<ScrollSpy>
 		<Header />
 
 		<section
 			use:scrollRef={'intro'}
-			class="scrollable-section main-section bg-fixed bg-cover text-center bg-black bg-center flex flex-col justify-center"
+			class="scrollable-section main-section flex flex-col justify-center bg-black bg-cover bg-fixed bg-center text-center"
 			id="intro"
 			style="background-image:url('{bg}')"
 		>
@@ -45,9 +45,10 @@
 	</footer>
 </div>
 
-<style lang="postcss">
+<style>
+	@reference "../app.css";
 	.main-section {
-		@apply pb-8 pt-14 min-h-screen flex flex-col justify-center;
+		@apply flex min-h-screen flex-col justify-center pt-14 pb-8;
 	}
 
 	#contact {

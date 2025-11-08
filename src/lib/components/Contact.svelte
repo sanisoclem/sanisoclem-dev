@@ -59,7 +59,9 @@
 	</div>
 </div>
 
-<style lang="postcss">
+<style>
+	@reference "../../app.css";
+
 	@keyframes wobble {
 		30% {
 			transform: scale(1.2);
