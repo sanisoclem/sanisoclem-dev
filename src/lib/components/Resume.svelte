@@ -58,21 +58,21 @@
 
 <div class:dark={darkMode}>
 	<div
-		class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white print:text-gray-900 print:dark:text-gray-900 print:dark:bg-transparent"
+		class="min-h-screen bg-white text-gray-900 dark:bg-gray-900 dark:text-white print:text-gray-900 print:dark:bg-transparent print:dark:text-gray-900"
 	>
-		<div class="max-w-screen-lg flex mx-auto p-10 gap-x-6 print:block print:py-0">
-			<div class="w-9 flex-shrink-0 hidden md:flex flex-col gap-y-6 items-center print:hidden">
+		<div class="mx-auto flex max-w-screen-lg gap-x-6 p-10 print:block print:py-0">
+			<div class="hidden w-9 flex-shrink-0 flex-col items-center gap-y-6 md:flex print:hidden">
 				<a href="/"
 					><img
 						src={data.basics.image}
 						alt={data.basics.name}
-						class="w-9 mx-auto utility-icon"
+						class="utility-icon mx-auto w-9"
 					/></a
 				>
 				<svg
 					on:click={toggleDarkMode}
 					class:dark={darkMode}
-					class="cursor-pointer h-9 w-9 dark-toggle transition-all duration-200"
+					class="dark-toggle h-9 w-9 cursor-pointer transition-all duration-200"
 					viewBox="0 0 24 24"
 					stroke-width="2"
 					stroke-linecap="round"
@@ -87,12 +87,12 @@
 					</mask>
 
 					<path
-						class="stroke-current sun transition-all duration-200"
+						class="sun stroke-current transition-all duration-200"
 						d="M7,12a5,5 0 1,0 10,0a5,5 0 1,0 -10,0z"
 						mask="url(#mask)"
 					/>
 
-					<g class="sun-rays transition-all duration-200 stroke-current">
+					<g class="sun-rays stroke-current transition-all duration-200">
 						<line x1="12" y1="1" x2="12" y2="3" />
 						<line x1="12" y1="21" x2="12" y2="23" />
 						<line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
@@ -104,7 +104,7 @@
 					</g>
 				</svg>
 				<a href="/cv.pdf" rel="external" title="or just print this page!">
-					<svg class="h-9 w-9 utility-icon" viewBox="0 0 550.801 550.801">
+					<svg class="utility-icon h-9 w-9" viewBox="0 0 550.801 550.801">
 						<path
 							class="fill-current"
 							d="M160.381,282.225c0-14.832-10.299-23.684-28.474-23.684c-7.414,0-12.437,0.715-15.071,1.432V307.6
@@ -135,29 +135,29 @@
 				</a>
 			</div>
 			<div class="flex-grow flex-wrap">
-				<section class="space-y-2 mb-10">
-					<div class="flex justify-between mb-4">
-						<h1 class="text-2xl font-bold uppercase leading-10">{data.basics.name}</h1>
+				<section class="mb-10 space-y-2">
+					<div class="mb-4 flex justify-between">
+						<h1 class="text-2xl leading-10 font-bold uppercase">{data.basics.name}</h1>
 						<div>
 							<img
 								src={data.basics.image}
 								alt={data.basics.name}
-								class="w-9 h-9 utility-icon hidden print:block"
+								class="utility-icon hidden h-9 w-9 print:block"
 							/>
 						</div>
 					</div>
 					<div class="font-semibold">{data.basics.label}</div>
-					<ul class="summary-list flex gap-2 text-sm text-gray-500 font-light flex-col md:flex-row">
+					<ul class="summary-list flex flex-col gap-2 text-sm font-light text-gray-500 md:flex-row">
 						<li>{data.basics.location.city}, {data.basics.location.region}</li>
 						<li><a href="https://{data.basics.url}">{data.basics.url}</a></li>
 						<li><a href="mailto:{data.basics.email}">{data.basics.email}</a></li>
 						<li><a href="tel:{data.basics.phone}">{data.basics.phone}</a></li>
 					</ul>
 				</section>
-				<section class="space-y-6 mb-10">
-					<h2 class="uppercase text-xs text-gray-500 font-bold tracking-widest">Work Experience</h2>
+				<section class="mb-10 space-y-6">
+					<h2 class="text-xs font-bold tracking-widest text-gray-500 uppercase">Work Experience</h2>
 					{#each data.work as work}
-						<div class="space-y-2 no-break">
+						<div class="no-break space-y-2">
 							<h3 class="text-md font-semibold uppercase">
 								{#if work.url}
 									<a href={work.url} class="text-base font-semibold hover:underline">{work.name}</a>
@@ -165,11 +165,11 @@
 									<span>{work.name}</span>
 								{/if}
 
-								<span class="text-sm text-gray-500 ml-2 capitalize font-medium"
+								<span class="ml-2 text-sm font-medium text-gray-500 capitalize"
 									>{work.country ? `(${work.country})` : ''}</span
 								>
 							</h3>
-							<div class="text-gray-400 font-medium text-sm">
+							<div class="text-sm font-medium text-gray-400">
 								<span>{work.position}</span> |
 								<span class="">{work.startDate} - {work.endDate || 'Present'}</span>
 							</div>
@@ -179,28 +179,28 @@
 						</div>
 					{/each}
 				</section>
-				<section class="space-y-6 mb-10 no-break">
-					<h2 class="uppercase text-xs text-gray-500 font-bold tracking-widest">Education</h2>
+				<section class="no-break mb-10 space-y-6">
+					<h2 class="text-xs font-bold tracking-widest text-gray-500 uppercase">Education</h2>
 					{#each data.education as education}
-						<div class="text-sm space-y-2">
+						<div class="space-y-2 text-sm">
 							<SvelteMarkdown source={education.institution} />
 						</div>
 					{/each}
 					<div class="no-break">
-						<h2 class="uppercase text-xs text-gray-500 font-bold tracking-widest mb-4">
+						<h2 class="mb-4 text-xs font-bold tracking-widest text-gray-500 uppercase">
 							Technologies
 						</h2>
 						<div class="flex flex-wrap gap-4">
 							{#each data.skills as skill}
 								<span
-									class="bg-amber-400 dark:bg-amber-600 px-2 print:border-black print:border-solid print:border-1 print:dark:bg-amber-400"
+									class="bg-amber-400 px-2 dark:bg-amber-600 print:border-1 print:border-solid print:border-black print:dark:bg-amber-400"
 									>{skill.name}</span
 								>
 							{/each}
 						</div>
 					</div>
 				</section>
-				<footer class="hidden print:block mt-10 w-full align-sub text-xs">
+				<footer class="mt-10 hidden w-full align-sub text-xs print:block">
 					<sub
 						>see latest version @ <a href="https://jerahmeelcosinas.net/cv"
 							>https://jerahmeelcosinas.net/cv</a
@@ -212,7 +212,8 @@
 	</div>
 </div>
 
-<style lang="postcss">
+<style>
+	@reference "../../app.css";
 	@keyframes wobble {
 		30% {
 			transform: scale(1.2);
