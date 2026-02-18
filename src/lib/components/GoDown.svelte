@@ -7,7 +7,7 @@
 	<a
 		href="#{anchor}"
 		use:scrollTo={anchor}
-		class="text-center block mx-auto h-10 w-10 rounded-full bg-current pulse"
+		class="text-center block mx-auto h-10 w-10 rounded-full bg-current pulse flex justify-center items-center"
 	>
 		<span class="pointer-events-none material-icons leading-10 text-white">arrow_downward</span>
 	</a>
