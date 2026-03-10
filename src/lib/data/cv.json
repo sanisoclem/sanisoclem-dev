@@ -34,7 +34,7 @@
 			"url": "https://creditclear.com.au",
 			"startDate": "Jan 2022",
 			"endDate": "",
-			"summary": " - Maintenance and enhancement of an event-driven, highly distributed system written in C#/F#/Typescript and using NServiceBus, RavenDB and React\n - Built integration with new payment gateway\n - Envisioned, prototype, proposed and implemented a new system for solving our integration problems. Early prototype (written during my personal time), can be found here: [https://vmcd.pages.dev/](https://vmcd.pages.dev/).",
+			"summary": " - Maintenance and enhancement of an event-driven, highly distributed system written in C#/F#/Typescript and using NServiceBus, RavenDB and React\n - Built integration with new payment gateway\n - Envisioned, prototype, proposed and implemented a new solution for integrating with our clients in various ways.",
 			"highlights": []
 		},
 		{
@@ -90,7 +90,7 @@
 	"volunteer": [],
 	"education": [
 		{
-			"institution": "I did not finish high school and so do not have formal education. However, I have been programming for more than 10 years and I’m always pushing myself to keep learning.\n\nI'm a big fan of functional languages and also rust (which I think is a very unique and interesting language). At the moment, these are the things that I'm working on getting better at and would like to use them even more moving forward.",
+			"institution": "I did not complete high school and so do not have formal education. However, I have been programming for over 20 years now and I’m always pushing myself to keep learning.\n\nI'm a big fan of functional languages and also rust (which I think is a very unique and interesting language). At the moment, these are the things that I'm working on getting better at and would like to use them even more moving forward.",
 			"area": "",
 			"studyType": "",
 			"startDate": "",
@@ -113,22 +113,7 @@
 			"keywords": []
 		},
 		{
-			"name": "Purescript",
-			"level": "",
-			"keywords": []
-		},
-		{
 			"name": "C#",
-			"level": "",
-			"keywords": []
-		},
-		{
-			"name": "Terraform (Azure)",
-			"level": "",
-			"keywords": []
-		},
-		{
-			"name": "Bicep",
 			"level": "",
 			"keywords": []
 		},
@@ -139,11 +124,6 @@
 		},
 		{
 			"name": "React",
-			"level": "",
-			"keywords": []
-		},
-		{
-			"name": "Remix",
 			"level": "",
 			"keywords": []
 		},
