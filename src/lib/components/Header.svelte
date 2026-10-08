@@ -4,25 +4,17 @@
 	import { scrollTo } from 'svelte-scrolling';
 	import { gridReceiver } from '../gridSignals';
 
-	let introActive: boolean;
 	let aboutActive: boolean;
-	let projectsActive: boolean;
 	let contactActive: boolean;
 
 	activeSectionId.subscribe((id) => {
-		introActive = id === 'intro';
 		aboutActive = id === 'about';
-		projectsActive = id === 'projects';
 		contactActive = id === 'contact';
 	});
 </script>
 
 <header
-	class:bg-gray-900={aboutActive}
-	class:bg-gray-800={contactActive}
-	class:bg-emerald-800={projectsActive}
-	class:bg-black={introActive}
-	class="transition-color duration-200 z-50 fixed w-screen border-b border-amber-500/10 text-white"
+	class="z-50 fixed w-screen border-b border-amber-500/10 bg-stone-950/80 text-stone-100 backdrop-blur-md"
 	use:gridReceiver
 >
 	<div class="mx-auto px-8 container max-w-screen-xl">

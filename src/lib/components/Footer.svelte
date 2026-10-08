@@ -5,7 +5,7 @@
 		<h2 class="pb-4 font-mono font-semibold tracking-widest text-amber-500/80 uppercase">
 			About this site
 		</h2>
-		<p>
+		<p class="text-stone-300">
 			This site was made with <a class="external-link" href="https://kit.svelte.dev/">SvelteKit</a>
 			and <a class="external-link" href="https://tailwindcss.com/docs">Tailwind CSS</a>, and is
 			hosted by <a class="external-link" href="https://pages.cloudflare.com/">Cloudflare Pages</a> 💖
@@ -70,6 +70,6 @@
 		fill: none;
 	}
 	a.external-link {
-		@apply hover:text-amber-500 hover:drop-shadow-glow bg-white/10 px-1;
+		@apply hover:text-amber-500 hover:drop-shadow-glow bg-amber-500/10 px-1;
 	}
 </style>

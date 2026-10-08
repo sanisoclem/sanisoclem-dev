@@ -13,7 +13,7 @@
 		<h2 class="font-display text-4xl font-bold mb-16 text-center text-shadow-glow">
 			<span>Leave a message!</span>
 		</h2>
-		<ul class="flex justify-around w-full text-white">
+		<ul class="flex justify-around w-full text-stone-100">
 			<li class="contact-link">
 				<a href="mailto:mel@busstop.dev;" title="Email">
 					<svg class="contact-icon fill-transparent" viewBox="2 0 20 20"

@@ -8,13 +8,15 @@
 	import ScrollSpy from '$lib/components/ScrollSpy.svelte';
 	import bg from '$lib/assets/bg.png';
 	import Footer from '$lib/components/Footer.svelte';
+	import GridLight from '$lib/components/GridLight.svelte';
 </script>
 
 <svelte:head>
 	<title>Jerahmeel Cosinas</title>
 </svelte:head>
 
-<div class="bg-gray-900 text-white">
+<div class="isolate bg-stone-950 text-stone-100">
+	<GridLight />
 	<ScrollSpy>
 		<Header />
 
@@ -38,13 +40,17 @@
 		<section
 			use:scrollRef={'contact'}
 			id="contact"
-			class="scrollable-section main-section overflow-x-clip bg-gray-800"
+			class="scrollable-section main-section overflow-x-clip"
 		>
 			<Contact />
 		</section>
 	</ScrollSpy>
 
-	<footer use:scrollRef={'footer'} id="footer" class="border-t border-amber-500/10 py-8">
+	<footer
+		use:scrollRef={'footer'}
+		id="footer"
+		class="border-t border-amber-500/10 bg-stone-900/50 py-8"
+	>
 		<Footer />
 	</footer>
 </div>
