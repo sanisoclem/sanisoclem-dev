@@ -2,6 +2,7 @@
 	import InPageLink from './InPageLink.svelte';
 	import { activeSectionId } from '../store';
 	import { scrollTo } from 'svelte-scrolling';
+	import { gridReceiver } from '../gridSignals';
 
 	let introActive: boolean;
 	let aboutActive: boolean;
@@ -22,9 +23,10 @@
 	class:bg-emerald-800={projectsActive}
 	class:bg-black={introActive}
 	class="transition-color duration-200 z-50 fixed w-screen border-b border-amber-500/10 text-white"
+	use:gridReceiver
 >
 	<div class="mx-auto px-8 container max-w-screen-xl">
-		<div class="flex justify-between gap-x-2">
+		<div class="flex h-16 items-center justify-between gap-x-2">
 			<a
 				href="#intro"
 				use:scrollTo={'intro'}

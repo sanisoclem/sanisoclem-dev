@@ -1,9 +1,11 @@
 <script lang="ts">
 	import bg from '$lib/assets/contact_bg.png';
+	import { gridSignals } from '../gridSignals';
 </script>
 
 <div
 	class="graph-paper container max-w-screen-md mx-auto flex justify-center flex-col md:flex-row items-center"
+	use:gridSignals
 >
 	<img src={bg} alt="my cats" class="max-w-xs md:max-w-sm flex-grow-0" title="my cats say hello!" />
 

@@ -11,23 +11,30 @@
 }
 
 @utility graph-paper {
+	--bleed: 3rem;
 	position: relative;
 	isolation: isolate;
+
+	&::before,
+	& > .graph-signals {
+		position: absolute;
+		top: calc(-1 * var(--bleed));
+		left: calc(-1 * var(--bleed));
+		width: calc(100% + 2 * var(--bleed));
+		height: calc(100% + 2 * var(--bleed));
+		z-index: -1;
+		pointer-events: none;
+		mask-image: radial-gradient(closest-side, black 40%, transparent);
+	}
 
 	&::before {
 		--line: color-mix(in oklab, var(--color-amber-500) 10%, transparent);
 		content: '';
-		position: absolute;
-		inset: -3rem;
-		z-index: -1;
-		pointer-events: none;
 		background-image:
 			linear-gradient(var(--line) 1px, transparent 1px),
 			linear-gradient(90deg, var(--line) 1px, transparent 1px);
 		background-size: 32px 32px;
-		background-position: center;
 		background-attachment: fixed;
-		mask-image: radial-gradient(closest-side, black 40%, transparent);
 	}
 }
 

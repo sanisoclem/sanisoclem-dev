@@ -1,8 +1,9 @@
 <script lang="ts">
 	import GoDown from './GoDown.svelte';
+	import { gridSignals } from '../gridSignals';
 </script>
 
-<div class="graph-paper mx-auto px-8 py-2 max-w-screen-md">
+<div class="graph-paper mx-auto px-8 py-2 max-w-screen-md" use:gridSignals>
 	<h2 class="font-display text-4xl font-bold uppercase mb-16 text-shadow-glow">About</h2>
 	<p class="text-xl mb-8 text-justify">
 		Hello, I'm Jerahmeel. I write code for a living and for fun. Nowadays, I code mostly in F#, C#

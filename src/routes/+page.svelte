@@ -52,7 +52,7 @@
 <style>
 	@reference "../app.css";
 	.main-section {
-		@apply flex min-h-screen flex-col justify-center pt-14 pb-8;
+		@apply flex min-h-screen flex-col justify-center pt-16 pb-8;
 	}
 
 	#contact {
