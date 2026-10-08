@@ -1,6 +1,36 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
+@theme {
+	--font-display: 'Doto', 'JetBrains Mono', ui-monospace, monospace;
+	--font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+	--text-shadow-glow:
+		0 0 6px color-mix(in oklab, var(--color-amber-500) 30%, transparent),
+		0 0 24px color-mix(in oklab, var(--color-amber-500) 25%, transparent);
+	--drop-shadow-glow: 0 0 6px color-mix(in oklab, var(--color-amber-500) 60%, transparent);
+}
+
+@utility graph-paper {
+	position: relative;
+	isolation: isolate;
+
+	&::before {
+		--line: color-mix(in oklab, var(--color-amber-500) 10%, transparent);
+		content: '';
+		position: absolute;
+		inset: -3rem;
+		z-index: -1;
+		pointer-events: none;
+		background-image:
+			linear-gradient(var(--line) 1px, transparent 1px),
+			linear-gradient(90deg, var(--line) 1px, transparent 1px);
+		background-size: 32px 32px;
+		background-position: center;
+		background-attachment: fixed;
+		mask-image: radial-gradient(closest-side, black 40%, transparent);
+	}
+}
+
 body {
 	font-family: 'Montserrat', sans-serif;
 }

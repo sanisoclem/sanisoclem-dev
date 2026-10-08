@@ -3,38 +3,15 @@
 </script>
 
 <div
-	class="container max-w-screen-md mx-auto flex justify-center flex-col md:flex-row items-center"
+	class="graph-paper container max-w-screen-md mx-auto flex justify-center flex-col md:flex-row items-center"
 >
 	<img src={bg} alt="my cats" class="max-w-xs md:max-w-sm flex-grow-0" title="my cats say hello!" />
 
 	<div class="flex flex-col justify-center flex-grow">
-		<h2 class="text-4xl mb-16 text-center">
+		<h2 class="font-display text-4xl font-bold mb-16 text-center text-shadow-glow">
 			<span>Leave a message!</span>
 		</h2>
 		<ul class="flex justify-around w-full text-white">
-			<li class="contact-link">
-				<a href="https://www.linkedin.com/in/jerahmeel-cosinas/" title="LinkedIn">
-					<svg class="contact-icon fill-transparent" viewBox="0 0 64 64"
-						><path
-							stroke-linecap="round"
-							stroke-miterlimit="10"
-							stroke-width="2"
-							d="M3.078 22.331h12.188v36.844H3.078z"
-						/><path
-							d="M46.719 21.112c-5.344 0-8.531 1.969-11.906 6.281v-5.062H22.625v36.844h12.281V39.206c0-4.219 2.156-8.344 7.031-8.344s7.781 4.125 7.781 8.25v20.063H62V38.269c0-14.532-9.844-17.157-15.281-17.157z"
-							stroke-linecap="round"
-							stroke-miterlimit="10"
-							stroke-width="2"
-						/><path
-							d="M9.219 4.425C5.188 4.425 2 7.331 2 10.894s3.188 6.469 7.219 6.469 7.219-2.906 7.219-6.469-3.188-6.469-7.219-6.469z"
-							stroke-linecap="round"
-							stroke-miterlimit="10"
-							stroke-width="2"
-						/></svg
-					>
-					<span class="link-label"> LinkedIn </span>
-				</a>
-			</li>
 			<li class="contact-link">
 				<a href="mailto:mel@busstop.dev;" title="Email">
 					<svg class="contact-icon fill-transparent" viewBox="2 0 20 20"
@@ -86,7 +63,7 @@
 		animation: wobble 0.7s cubic-bezier(0.4, 0, 0.6, 1);
 	}
 	.contact-link > a {
-		@apply text-center block hover:text-amber-500;
+		@apply text-center block hover:text-amber-500 hover:drop-shadow-glow;
 	}
 	.link-label {
 		display: none;

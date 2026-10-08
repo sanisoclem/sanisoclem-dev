@@ -20,27 +20,31 @@
 
 		<section
 			use:scrollRef={'intro'}
-			class="scrollable-section main-section flex flex-col justify-center bg-black bg-cover bg-fixed bg-center text-center"
+			class="scrollable-section main-section flex flex-col justify-center overflow-x-clip bg-black bg-cover bg-fixed bg-center text-center"
 			id="intro"
 			style="background-image:url('{bg}')"
 		>
 			<Intro />
 		</section>
 
-		<section use:scrollRef={'about'} id="about" class="scrollable-section main-section">
+		<section
+			use:scrollRef={'about'}
+			id="about"
+			class="scrollable-section main-section overflow-x-clip"
+		>
 			<About />
 		</section>
 
 		<section
 			use:scrollRef={'contact'}
 			id="contact"
-			class="scrollable-section main-section bg-gray-800"
+			class="scrollable-section main-section overflow-x-clip bg-gray-800"
 		>
 			<Contact />
 		</section>
 	</ScrollSpy>
 
-	<footer use:scrollRef={'footer'} id="footer" class="py-8">
+	<footer use:scrollRef={'footer'} id="footer" class="border-t border-amber-500/10 py-8">
 		<Footer />
 	</footer>
 </div>

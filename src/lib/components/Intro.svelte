@@ -2,13 +2,16 @@
 	import GoDown from './GoDown.svelte';
 </script>
 
-<h1 class="mx-auto bg-white/10 p-8 text-4xl uppercase">
-	<span>Jerahmeel Cosinas</span>
-</h1>
+<h1 class="sr-only">Jerahmeel Cosinas</h1>
 
-<p class="tagline p-4"></p>
-<p class="description">coder</p>
+<div class="graph-paper mx-auto mt-[60vh] w-fit px-24 py-16 sm:px-48 sm:py-20">
+	<p
+		class="description indent-[0.4em] font-mono tracking-[0.4em] text-amber-400 uppercase text-shadow-glow"
+	>
+		coding...
+	</p>
 
-<div class="text-black text-opacity-50">
-	<GoDown anchor="about" />
+	<div class="text-opacity-50 text-black">
+		<GoDown anchor="about" />
+	</div>
 </div>

@@ -3,31 +3,26 @@
 	export let anchor: string;
 </script>
 
-<div class="mt-20">
+<div class="mt-12">
 	<a
 		href="#{anchor}"
 		use:scrollTo={anchor}
-		class="text-center block mx-auto h-10 w-10 rounded-full bg-current pulse flex justify-center items-center"
+		class="pulse mx-auto flex h-8 w-8 items-center justify-center border border-amber-500/50 bg-black/40 text-amber-400 drop-shadow-glow transition-colors hover:border-amber-400 hover:text-amber-200"
 	>
-		<span class="pointer-events-none material-icons leading-10 text-white">arrow_downward</span>
+		<span class="pointer-events-none material-icons leading-none">arrow_downward</span>
 	</a>
 </div>
 
 <style>
 	@keyframes pulse-animation {
 		0% {
-			background-color: white;
-			opacity: 0.5;
+			opacity: 0.7;
 			transform: scale(1);
 		}
-		50% {
-			opacity: 0;
-			transform: scale(1.5);
-		}
+		60%,
 		100% {
-			background-color: white;
 			opacity: 0;
-			transform: scale(1.5);
+			transform: scale(1.7);
 		}
 	}
 	.pulse {
@@ -42,7 +37,8 @@
 		height: 100%;
 		top: 0;
 		left: 0;
-		border-radius: inherit;
+		border: 1px solid var(--color-amber-500);
+		box-shadow: 0 0 12px color-mix(in oklab, var(--color-amber-500) 50%, transparent);
 		transition:
 			opacity 0.3s,
 			transform 0.3s;

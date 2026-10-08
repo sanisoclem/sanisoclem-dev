@@ -21,7 +21,7 @@
 	class:bg-gray-800={contactActive}
 	class:bg-emerald-800={projectsActive}
 	class:bg-black={introActive}
-	class="transition-color duration-200 z-50 fixed w-screen text-white"
+	class="transition-color duration-200 z-50 fixed w-screen border-b border-amber-500/10 text-white"
 >
 	<div class="mx-auto px-8 container max-w-screen-xl">
 		<div class="flex justify-between gap-x-2">
@@ -29,7 +29,7 @@
 				href="#intro"
 				use:scrollTo={'intro'}
 				id="intro-link"
-				class="flex gap-x-2 py-2 hover:text-amber-500 transition-colors duration-75"
+				class="flex gap-x-2 py-2 hover:text-amber-500 hover:drop-shadow-glow transition-colors duration-75"
 			>
 				<svg viewBox="0 0 10 10" class="logo h-10 w-10">
 					<g>
@@ -39,14 +39,14 @@
 						/>
 					</g>
 				</svg>
-				<span class="uppercase leading-10 text-lg">Cosinas</span>
+				<span class="font-display text-2xl font-bold uppercase leading-10">Cosinas</span>
 			</a>
 
 			<nav class="hidden md:flex items-center gap-x-4">
 				<InPageLink href="about" title="About" active={aboutActive} />
 				<InPageLink href="contact" title="Contact" active={contactActive} />
 				<a
-					class="leading-10 p-2 transition uppercase hover:text-amber-500 border-b-4 border-transparent flex gap-x-2 justify-center items-center"
+					class="leading-10 p-2 transition font-mono text-sm tracking-widest uppercase hover:text-amber-500 hover:drop-shadow-glow border-b-4 border-transparent flex gap-x-2 justify-center items-center"
 					href="https://busstop.dev"
 					>Blog <svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@
 					</svg>
 				</a>
 				<a
-					class="leading-10 p-2 transition uppercase hover:text-amber-500 border-b-4 border-transparent flex gap-x-2 justify-center items-center"
+					class="leading-10 p-2 transition font-mono text-sm tracking-widest uppercase hover:text-amber-500 hover:drop-shadow-glow border-b-4 border-transparent flex gap-x-2 justify-center items-center"
 					href="https://tools.busstop.dev"
 					>stuff <svg
 						xmlns="http://www.w3.org/2000/svg"

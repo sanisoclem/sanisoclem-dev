@@ -2,7 +2,9 @@
 	class="mx-auto px-8 container max-w-screen-xl flex flex-col md:flex-row gap-x-20 text-center md:text-left gap-y-8 text-xs justify-between"
 >
 	<div class="">
-		<h2 class="pb-4 font-semibold">About this site</h2>
+		<h2 class="pb-4 font-mono font-semibold tracking-widest text-amber-500/80 uppercase">
+			About this site
+		</h2>
 		<p>
 			This site was made with <a class="external-link" href="https://kit.svelte.dev/">SvelteKit</a>
 			and <a class="external-link" href="https://tailwindcss.com/docs">Tailwind CSS</a>, and is
@@ -10,10 +12,12 @@
 		</p>
 	</div>
 	<div>
-		<h2 class="-mt-2 pb-0 font-semibold">Mildy interesting links</h2>
+		<h2 class="-mt-2 pb-0 font-mono font-semibold tracking-widest text-amber-500/80 uppercase">
+			Mildy interesting links
+		</h2>
 		<ul class="flex justify-center gap-x-4 md:gap-x-8 md:mt-5">
 			<li>
-				<a rel="me author" href="https://github.com/sanisoclem" class="hover:text-amber-500 flex gap-x-2">
+				<a rel="me author" href="https://github.com/sanisoclem" class="hover:text-amber-500 hover:drop-shadow-glow flex gap-x-2">
 					<svg
 						class="h-8 w-8 fill-transparent stroke-current"
 						viewBox="0 0 24 24"
@@ -29,7 +33,7 @@
 			<li>
 				<a
 					href="https://github.com/sanisoclem/sanisoclem-dev"
-					class="hover:text-amber-500 flex gap-x-2"
+					class="hover:text-amber-500 hover:drop-shadow-glow flex gap-x-2"
 				>
 					<svg class="h-8 w-8 fill-current" viewBox="3 3 18 18">
 						<g id="code" opacity="0.75">
@@ -66,6 +70,6 @@
 		fill: none;
 	}
 	a.external-link {
-		@apply hover:text-amber-500 bg-white/10 px-1;
+		@apply hover:text-amber-500 hover:drop-shadow-glow bg-white/10 px-1;
 	}
 </style>
