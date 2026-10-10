@@ -36,7 +36,7 @@
 	}
 
 	.grid-light {
-		--line: color-mix(in oklab, var(--color-amber-500) 14%, transparent);
+		--line: color-mix(in oklab, var(--color-cyan-400) 14%, transparent);
 		position: fixed;
 		inset: 0;
 		z-index: -1;
@@ -44,7 +44,7 @@
 		background-image:
 			radial-gradient(
 				circle 160px at var(--x) var(--y),
-				color-mix(in oklab, var(--color-amber-500) 5%, transparent),
+				color-mix(in oklab, var(--color-cyan-400) 5%, transparent),
 				transparent
 			),
 			linear-gradient(var(--line) 1px, transparent 1px),
@@ -63,5 +63,9 @@
 
 	.grid-light.visible {
 		opacity: 1;
+	}
+
+	:global(.grid-live) .grid-light {
+		display: none;
 	}
 </style>

@@ -19,7 +19,7 @@ const config = {
 				'script-src': ['self', 'static.cloudflareinsights.com'],
 				'style-src': ['self', 'fonts.googleapis.com', 'unsafe-inline'],
 				'font-src': ['self', 'fonts.gstatic.com'],
-				'connect-src': ['cloudflareinsights.com']
+				'connect-src': ['self', 'cloudflareinsights.com']
 			}
 		}
 	}
