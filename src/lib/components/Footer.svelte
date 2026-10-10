@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { bwv1052 } from '$lib/bwv1052';
+</script>
+
 <div
 	class="mx-auto px-8 container max-w-screen-xl flex flex-col md:flex-row gap-x-20 text-center md:text-left gap-y-8 text-xs justify-between"
 >
@@ -10,6 +14,7 @@
 			and <a class="external-link" href="https://tailwindcss.com/docs">Tailwind CSS</a>, and is
 			hosted by <a class="external-link" href="https://pages.cloudflare.com/">Cloudflare Pages</a> 💖
 		</p>
+		<p class="pt-2 text-stone-400">The signals on the grid play {bwv1052.credit}.</p>
 	</div>
 	<div>
 		<h2 class="-mt-2 pb-0 font-mono font-semibold tracking-widest text-amber-500/80 uppercase">

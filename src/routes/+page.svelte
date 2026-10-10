@@ -9,6 +9,7 @@
 	import bg from '$lib/assets/bg.png';
 	import Footer from '$lib/components/Footer.svelte';
 	import GridLight from '$lib/components/GridLight.svelte';
+	import { gridField } from '$lib/gridSignals';
 </script>
 
 <svelte:head>
@@ -17,6 +18,7 @@
 
 <div class="isolate bg-stone-950 text-stone-100">
 	<GridLight />
+	<div class="pointer-events-none fixed inset-0" use:gridField></div>
 	<ScrollSpy>
 		<Header />
 

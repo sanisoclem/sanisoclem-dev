@@ -15,8 +15,7 @@
 	position: relative;
 	isolation: isolate;
 
-	&::before,
-	& > .graph-signals {
+	&::before {
 		position: absolute;
 		top: calc(-1 * var(--bleed));
 		left: calc(-1 * var(--bleed));
@@ -25,9 +24,6 @@
 		z-index: -1;
 		pointer-events: none;
 		mask-image: radial-gradient(closest-side, black 40%, transparent);
-	}
-
-	&::before {
 		--line: color-mix(in oklab, var(--color-amber-500) 10%, transparent);
 		content: '';
 		background-image:

@@ -1,47 +1,65 @@
 import type { Action } from 'svelte/action';
-import { createGridRenderer, type GridRenderer, type GridView } from './gridShader';
+import { bwv1052 } from './bwv1052';
+import {
+	createGridRenderer,
+	TRAVEL,
+	type Box,
+	type GridRenderer,
+	type GridView
+} from './gridShader';
 
 type Surface = {
 	element: HTMLElement;
 	canvas: HTMLCanvasElement;
 	render: GridRenderer;
-	visible: boolean;
 };
 
 type Contact = { centre: number; halfWidth: number };
 
-type Moment = Pick<GridView, 'time' | 'activity'>;
+type Moment = Pick<GridView, 'time' | 'viewport'>;
 
-type Scene = Moment & Pick<GridView, 'receiver' | 'contact'>;
+type Scene = Omit<GridView, 'origin' | 'resolution' | 'scale'>;
 
 const RECEIVE_REACH = 16;
 const MAX_PIXEL_RATIO = 2;
 const ENERGY_RATE = 3;
-const QUIET_SECONDS = 3;
-const RAMP_SECONDS = 7;
+const POINTER_RATE = 6;
 
-const patches = new Set<Surface>();
+const patches = new Set<HTMLElement>();
+const pointer = { x: 0, y: 0, over: false, presence: 0 };
+let field: Surface | null = null;
 let receiver: Surface | null = null;
 let contact: Contact = { centre: 0, halfWidth: 0 };
 let energy = 0;
 let previousTime = 0;
 let startTime: number | null = null;
+let leadIn: number | null = null;
 let frame = 0;
 
+/** Lights up the notes falling past this element, as far as its .graph-paper grid reaches. */
 export const gridSignals: Action<HTMLElement> = (element) => {
-	const patch = createSurface(element, 'graph-signals');
-	if (!patch) return;
-	patches.add(patch);
-	const visibility = new IntersectionObserver(([entry]) => {
-		patch.visible = entry.isIntersecting;
-	});
-	visibility.observe(patch.canvas);
+	patches.add(element);
+	return {
+		destroy() {
+			patches.delete(element);
+		}
+	};
+};
+
+/** Draws the falling notes across the whole viewport. */
+export const gridField: Action<HTMLElement> = (element) => {
+	const surface = createSurface(element, 'block h-full w-full');
+	if (!surface) return;
+	field = surface;
+	addEventListener('pointermove', follow, { passive: true });
+	addEventListener('mouseout', leave);
 	start();
 	return {
 		destroy() {
-			visibility.disconnect();
-			patches.delete(patch);
-			patch.canvas.remove();
+			field = null;
+			removeEventListener('pointermove', follow);
+			removeEventListener('mouseout', leave);
+			surface.canvas.remove();
 			stopWhenIdle();
 		}
 	};
@@ -70,10 +88,19 @@ function createSurface(element: HTMLElement, className: string): Surface | null 
 	canvas.className = className;
 	canvas.setAttribute('aria-hidden', 'true');
 	const gl = canvas.getContext('webgl2', { premultipliedAlpha: true, antialias: false });
-	const render = gl && createGridRenderer(gl);
+	const render = gl && createGridRenderer(gl, bwv1052);
 	if (!render) return null;
 	element.append(canvas);
-	return { element, canvas, render, visible: true };
+	return { element, canvas, render };
+}
+
+function follow(event: PointerEvent) {
+	if (event.pointerType !== 'mouse') return;
+	Object.assign(pointer, { x: event.clientX, y: event.clientY, over: true });
+}
+
+function leave(event: MouseEvent) {
+	if (!event.relatedTarget) pointer.over = false;
 }
 
 function start() {
@@ -82,30 +109,56 @@ function start() {
 }
 
 function stopWhenIdle() {
-	if (patches.size > 0 || receiver) return;
+	if (field || receiver) return;
 	cancelAnimationFrame(frame);
 	frame = 0;
 }
 
 function tick(now: number) {
-	const time = now / 1000;
-	const moment: Moment = { time, activity: activityAt(time) };
-	for (const patch of patches) {
-		if (patch.visible) draw(patch, { ...moment, receiver: false, contact: [0, 0, 0] });
-	}
-	if (receiver) drawReceiver(receiver, moment);
+	const viewport: Moment['viewport'] = [
+		document.documentElement.clientWidth,
+		document.documentElement.clientHeight
+	];
+	// Start the song a screen's fall early so the first notes drop in from the top.
+	leadIn ??= viewport[1] / TRAVEL;
+	const moment: Moment = { time: now / 1000 - (startTime ?? now / 1000) - leadIn, viewport };
+	const elapsed = moment.time - previousTime;
+	previousTime = moment.time;
+	if (field) drawField(field, moment, elapsed);
+	if (receiver) drawReceiver(receiver, moment, elapsed);
 	frame = requestAnimationFrame(tick);
 }
 
-function drawReceiver(surface: Surface, moment: Moment) {
-	const touching = findContact(surface.element.getBoundingClientRect());
-	if (touching) contact = touching;
-	energy = approach(energy, touching ? 1 : 0, moment.time - previousTime);
-	previousTime = moment.time;
+function drawField(surface: Surface, moment: Moment, elapsed: number) {
+	pointer.presence = approach(pointer.presence, pointer.over ? 1 : 0, elapsed, POINTER_RATE);
+	const [width, height] = moment.viewport;
+	const lit: Box[] = [];
+	for (const element of patches) {
+		const rect = element.getBoundingClientRect();
+		// The grid drawn by .graph-paper reaches past the element by its bleed.
+		const bleed = -parseFloat(getComputedStyle(element, '::before').top) || 0;
+		const box: Box = [rect.left - bleed, rect.top - bleed, rect.right + bleed, rect.bottom + bleed];
+		if (box[2] > 0 && box[0] < width && box[3] > 0 && box[1] < height) lit.push(box);
+	}
 	draw(surface, {
 		...moment,
-		receiver: true,
-		contact: [contact.centre, contact.halfWidth, energy]
+		mode: 'field',
+		contact: [0, 0, 0],
+		lit,
+		pointer: [pointer.x, pointer.y, pointer.presence]
+	});
+}
+
+function drawReceiver(surface: Surface, moment: Moment, elapsed: number) {
+	const touching = findContact(surface.element.getBoundingClientRect());
+	if (touching) contact = touching;
+	energy = approach(energy, touching ? 1 : 0, elapsed, ENERGY_RATE);
+	draw(surface, {
+		...moment,
+		mode: 'receiver',
+		contact: [contact.centre, contact.halfWidth, energy],
+		lit: [],
+		pointer: [0, 0, 0]
 	});
 }
 
@@ -113,7 +166,7 @@ function findContact(header: DOMRect): Contact | null {
 	let closest: Contact | null = null;
 	let widest = 0;
 	for (const patch of patches) {
-		const lit = patch.element.getBoundingClientRect();
+		const lit = patch.getBoundingClientRect();
 		const overlap = Math.min(lit.right, header.right) - Math.max(lit.left, header.left);
 		const touching = lit.top - RECEIVE_REACH < header.bottom && lit.bottom > header.top;
 		if (!touching || overlap <= widest) continue;
@@ -123,14 +176,8 @@ function findContact(header: DOMRect): Contact | null {
 	return closest;
 }
 
-function approach(value: number, target: number, elapsed: number): number {
-	return value + (target - value) * (1 - Math.exp(-Math.max(elapsed, 0) * ENERGY_RATE));
-}
-
-function activityAt(time: number): number {
-	const elapsed = time - (startTime ?? time) - QUIET_SECONDS;
-	const progress = Math.min(Math.max(elapsed / RAMP_SECONDS, 0), 1);
-	return progress * progress * (3 - 2 * progress);
+function approach(value: number, target: number, elapsed: number, rate: number): number {
+	return value + (target - value) * (1 - Math.exp(-Math.max(elapsed, 0) * rate));
 }
 
 function draw(surface: Surface, scene: Scene) {
